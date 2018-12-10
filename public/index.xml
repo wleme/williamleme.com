@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>William Leme</title>
+    <link>https://www.williamleme.com/</link>
+    <description>Recent content on William Leme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Dec 2018 22:33:40 -0500</lastBuildDate>
+    
+	<atom:link href="https://www.williamleme.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://www.williamleme.com/about/</link>
+      <pubDate>Thu, 06 Dec 2018 22:33:40 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/about/</guid>
+      <description>I’m a lead .Net Software Engineer in sunny Jacksonville/FL and am all about adding value to software products, automating processes and promoting a growth mindset within businesses.
+Wanna connect ? Send me an email: contact@williamleme.com</description>
+    </item>
+    
+    <item>
+      <title>Installing SqlServer on Linux</title>
+      <link>https://www.williamleme.com/posts/installing-sqlserver-on-linux/</link>
+      <pubDate>Sat, 08 Dec 2018 06:37:27 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/installing-sqlserver-on-linux/</guid>
+      <description>In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio) I keep all my databases, queues and other infrastructure tools on a linux box running as docker containers. Docker gives me the flexibility of installing multiple things without messing up my dev environment and I recently added SqlServer
+Pull the docker image into your linux box sudo docker pull mcr.</description>
+    </item>
+    
+    <item>
+      <title>Enumerators in your Api - How to handle enums in your .Net Core Api</title>
+      <link>https://www.williamleme.com/posts/how-to-handle-enums-net-core/</link>
+      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/how-to-handle-enums-net-core/</guid>
+      <description>You should never make your api consumers understand your enums. They should never send or receive numbers (10, 20, &amp;hellip;) for things like AddressType, Gender, Day of the week and so forth. What does number 10 mean anyway ? You don&amp;rsquo;t even know yourself! This project shows how we can deal with a string coming in, convert it to an enumerator and respond to the caller by sending a string again.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,14 @@
+.container {
+	max-width:1024px;
+}
+
+.main-menu li {
+	margin-right:1em;
+}
+
+img[src$='#center']
+{
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
