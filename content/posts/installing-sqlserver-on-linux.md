@@ -27,7 +27,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 {{< highlight terminal>}}
 sudo nano docker-compose.yml
 {{< /highlight>}}
-and type the following: (The configuration below will run the slq server container in the developer edition)
+and type the following: (The configuration below will run the sql server container in the developer edition)
 {{< highlight terminal "linenos=table,hl_lines=4 6 8-9 11 13">}}
 version: '3'
 services:
