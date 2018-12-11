@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>#enums on William Leme</title>
+    <link>https://www.williamleme.com/tags/enums/</link>
+    <description>Recent content in #enums on William Leme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 06 Dec 2018 16:48:04 -0500</lastBuildDate>
+    
+	<atom:link href="https://www.williamleme.com/tags/enums/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Enumerators in your Api - How to handle enums in your .Net Core Api</title>
+      <link>https://www.williamleme.com/posts/how-to-handle-enums-net-core/</link>
+      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/how-to-handle-enums-net-core/</guid>
+      <description>You should never make your api consumers understand your enums. They should never send or receive numbers (10, 20, &amp;hellip;) for things like AddressType, Gender, Day of the week and so forth. What does number 10 mean anyway ? You don&amp;rsquo;t even know yourself! This project shows how we can deal with a string coming in, convert it to an enumerator and respond to the caller by sending a string again.</description>
+    </item>
+    
+  </channel>
+</rss>

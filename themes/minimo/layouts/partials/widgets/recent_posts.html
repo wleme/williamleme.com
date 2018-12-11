@@ -2,8 +2,8 @@
 {{- $configData := ( or .Site.Data.config.widgets.recent_posts $defaultConfig ) -}}
 {{- $lang := .Site.Language.Lang -}}
 {{- $config := ( ( index $configData $lang ) | default $configData ) -}}
-
 {{- $length := ( $config.length | default 5 ) -}}
+
 
 <section class='widget widget-recent_posts sep-after'>
   <header>
@@ -15,6 +15,12 @@
   <ul class='list'>
   {{ range ( first $length ( where .Site.RegularPages "Type" "not in" $config.excludeTypes ) ) }}
     {{ .Render "li" }}
+	
+ 
+
+	
   {{ end }}
+  
   </ul>
+  
 </section>
