@@ -2,7 +2,7 @@
 title: "Put vs Patch Api in .Net Core"
 description: "When and how to use http verbs put and patch in your .Net Core Api"
 date: 2018-12-12T08:04:16-05:00
-draft: true
+draft: false
 categories: [.Net]
 seq: 0003
 tags: ["#csharp","#api","#jsonpatch"]

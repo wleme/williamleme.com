@@ -5,7 +5,7 @@
     <link>https://www.williamleme.com/tags/</link>
     <description>Recent content in Tags on William Leme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Dec 2018 16:48:04 -0500</lastBuildDate>
+    <lastBuildDate>Wed, 12 Dec 2018 08:04:16 -0500</lastBuildDate>
     
 	<atom:link href="https://www.williamleme.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +13,7 @@
     <item>
       <title>#api</title>
       <link>https://www.williamleme.com/tags/api/</link>
-      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
+      <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
       
       <guid>https://www.williamleme.com/tags/api/</guid>
       <description></description>
@@ -22,7 +22,7 @@
     <item>
       <title>#csharp</title>
       <link>https://www.williamleme.com/tags/csharp/</link>
-      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
+      <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
       
       <guid>https://www.williamleme.com/tags/csharp/</guid>
       <description></description>
@@ -52,6 +52,15 @@
       <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
       
       <guid>https://www.williamleme.com/tags/enums/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>#jsonpatch</title>
+      <link>https://www.williamleme.com/tags/jsonpatch/</link>
+      <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/jsonpatch/</guid>
       <description></description>
     </item>
     
