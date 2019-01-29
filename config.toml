@@ -34,7 +34,7 @@ gopher = "32eed987766056ddcc4a1a8faffb6b27cd50d99b" # used in 404 template ( Gen
 [params.copyright]
 prefix = ""
 holder = "William Leme"
-startYear = "2018"
+startYear = "2019"
 suffix = ""
 
 [params.settings]
