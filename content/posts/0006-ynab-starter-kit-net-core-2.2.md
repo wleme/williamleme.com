@@ -1,5 +1,6 @@
 ---
 title: "YNAB starter kit in .Net Core 2.2"
+description: "Want to start developing custom YNAB tools using .net core ?"
 date: 2019-01-30T15:03:09-05:00
 draft: false
 cover: /imgs/0006-ynablogo.png#center
