@@ -16,4 +16,4 @@ After almost 3 years of flawless service availaility my app service came to a ha
 </EventData>
 {{< / highlight>}}
 
-No code changes and no service changes were made so the solution was to **restart the app service** :/ :rage:
+No code changes and no service changes were made so the solution was to **restart the app service** :rage:
