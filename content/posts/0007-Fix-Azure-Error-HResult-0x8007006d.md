@@ -8,7 +8,7 @@ tags: ["#azure"]
 
 After almost 3 years of flawless service availaility my app service came to a halt with the following event entry
 
-{{< highlight js "linenos=table" >}}
+{{< highlight xml "linenos=table" >}}
 <EventData>
 <Data>
 .NET Runtime version 4.0.30319.0 - Loading profiler failed. Failed trying to receive from out of process a request to attach a profiler. HRESULT: 0x8007006d. Process ID (decimal): 60152. Message ID: [0x250d].
