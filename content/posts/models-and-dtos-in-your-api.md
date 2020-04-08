@@ -7,7 +7,7 @@ seq: 0004
 tags: ["#API","#csharp"]
 ---
 
-I religiously avoid using model objects on my API interfaces. The reason is really simple, a model is a business entity and you don't want to expose a business entity inadvertently to your API consumers.
+I religiously avoid using model objects on my API interfaces. The reason is really simple, a model is a business entity and you don't want to expose a business entity inadvertently to your API consumers. <!--more--> 
 #### What's the problem ?
 
 Consider the following model being used by the business layer of your application and also being returned in a get method of your API

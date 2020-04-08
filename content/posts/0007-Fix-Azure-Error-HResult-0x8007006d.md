@@ -6,8 +6,8 @@ draft: false
 tags: ["#azure"]
 ---
 
-After almost 3 years of flawless service availaility my app service came to a halt with the following event entry
-
+After almost 3 years of flawless service availability my app service came to a halt with the following event entry
+<!--more--> 
 {{< highlight xml "linenos=table" >}}
 <EventData>
 <Data>

@@ -6,7 +6,7 @@ draft: false
 tags: ["#csharp"]
 ---
 
-You can easily access the OAuth access token by calling **GetTokenAsync**.
+You can easily access the OAuth access token by calling <!--more--> **GetTokenAsync**.
 
 #### Make sure to set SaveTokens = true when setting up OAuth middleware
 

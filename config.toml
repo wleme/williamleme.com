@@ -22,7 +22,7 @@ enableEmoji = true
 defaultContentLanguage = "en"
 
 [params.info]
-description = ".Net & Javascript"
+description = "Software Engineer"
 title404 = "Nothing's here!"
 
 [params.assets]
@@ -128,11 +128,11 @@ name = "Home"
 weight = 10
 identifier = "repositor"
 url = "/"
-#[[menu.main]]
-#name = "Categories"
+[[menu.main]]
+name = "Tags"
 #weight = 30
 #identifier = "ca"
-#url = "/categories/"
+url = "/tags/"
 
 [blackfriday]
 hrefTargetBlank = true

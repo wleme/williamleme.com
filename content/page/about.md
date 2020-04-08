@@ -7,7 +7,6 @@ menu: main
 weight: 50
 ---
 
-I’m a lead .Net Software Engineer in sunny Jacksonville/FL and am all about adding value to 
-software products, automating processes and promoting a growth mindset within businesses..
+Hello! I'm William, a head of software development and full stack engineer based in sunny Jacksonville, FL. I'm all about adding value to software products, automating processes, promoting a growth mindset within businesses and creating strong teams.
 
-Wanna connect ? Send me an email: <contact@williamleme.com>
+If you want to reach out you can send an email to: **__contact at williamleme dot com__** or find me on the channels bellow.
