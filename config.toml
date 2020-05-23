@@ -132,7 +132,7 @@ url = "/"
 name = "Projects"
 #weight = 30
 #identifier = "ca"
-url = "/tags/projects"
+url = "/tags/project"
 [[menu.main]]
 name = "Tags"
 #weight = 30

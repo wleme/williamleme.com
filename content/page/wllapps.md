@@ -5,7 +5,8 @@ comments: false
 
 Hello,
 
-wllapps.com hosts my projects listed [here](/tags/projects) and you can find more about me [here](/about)
+I publish some of my projects at wllapps.com. You can find a list of them [here](/tags/project) and more about me [here](/about). 
+
 
 
 
