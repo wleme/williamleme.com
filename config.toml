@@ -129,6 +129,11 @@ weight = 10
 identifier = "repositor"
 url = "/"
 [[menu.main]]
+name = "Projects"
+#weight = 30
+#identifier = "ca"
+url = "/tags/projects"
+[[menu.main]]
 name = "Tags"
 #weight = 30
 #identifier = "ca"
