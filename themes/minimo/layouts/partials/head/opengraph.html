@@ -1,9 +1,6 @@
-<meta property='twitter:description' content='{{ partial "data/description" . }}'>
-<meta property='twitter:title' content='{{ partial "data/title" . }}'>
 <meta property='og:title' content='{{ partial "data/title" . }}'>
 <meta property='og:description' content='{{ partial "data/description" . }}'>
 <meta property='og:url' content='{{ .Permalink }}'>
-<meta property='twitter:url' content='{{ .Permalink }}'>
 <meta property='og:site_name' content='{{ .Site.Title }}'>
 <meta property='og:type' content='
   {{- if .IsPage -}}
@@ -16,17 +13,22 @@
 {{- with .Params.cover -}}
   {{- $type := ( printf "%T" . ) -}}
   {{- $isMap := ( not ( eq $type "string" ) ) -}}
-  <meta property='og:image' content='
-    {{- if $isMap -}}
-      {{- .image | absURL -}}
-    {{- else -}}
-      {{- . | absURL -}}
-    {{- end -}}'>
+
+  {{- $image := "" -}}
+  {{- if $isMap -}}
+    {{- $image = .image -}}
+  {{- else -}}
+    {{- $image = . -}}
+  {{- end -}}
+
+  {{- $image = ( replaceRE "^\\./" $.RelPermalink $image ) -}}
+
+  <meta property='og:image' content='{{- $image | absURL -}}'>
 {{- end -}}
 
 {{- with .Params.images -}}
   {{- range first 5 . -}}
-    <meta property='og:image' content='{{ . | absURL }}'>
+    <meta property='og:image' content='{{ ( replaceRE "^\\./" $.RelPermalink . ) | absURL }}'>
   {{- end -}}
 {{- end -}}
 
@@ -51,13 +53,13 @@
 
 {{- with .Params.audios -}}
   {{- range first 5 . -}}
-    <meta property='og:audio' content='{{ . | absURL }}'>
+    <meta property='og:audio' content='{{ ( replaceRE "^\\./" $.RelPermalink . ) | absURL }}'>
   {{- end -}}
 {{- end -}}
 
 {{- with .Params.videos -}}
   {{- range first 5 . -}}
-    <meta property='og:video' content='{{ . | absURL }}'>
+    <meta property='og:video' content='{{ ( replaceRE "^\\./" $.RelPermalink . ) | absURL }}'>
   {{- end -}}
 {{- end -}}
 
@@ -110,4 +112,3 @@
 {{- end -}}
 
 {{- partial "head/opengraph/twitter" . -}}
-

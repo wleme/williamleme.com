@@ -1,0 +1,37 @@
+<li class='item'>
+  <div class='meta'>
+    {{ partial "list/date" . }}
+  </div>
+  <header class='item-header'>
+    <h3 class='item-title'>
+      <a href='{{ .Permalink | relURL }}'>
+        {{- .Title -}}
+      </a>
+	  
+    </h3>
+	
+	
+  	      [{{ range $i, $e := .Params.tags -}}
+    {{- if $i -}}, {{ end -}}
+    <!--<a href='{{ "/tags/" | relLangURL }}{{ . | urlize }}'>{{ $e   }}</a>-->
+	  <a href='{{ "/tags/" | relLangURL }}{{ replace .  "#" ""}}'>{{ $e  }}</a>
+{{- end -}}]
+
+
+  {{ .Summary }}
+
+
+ {{ if .Truncated }}
+       <!-- This <div> includes a read more link, but only if the summary is truncated... -->
+      <div>
+        <a href="{{ .RelPermalink }}">Read More…</a>
+      </div>
+      {{ end }}
+	  
+
+  </header>
+    
+
+
+</li>
+

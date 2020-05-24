@@ -88,7 +88,7 @@ scriptSrc = "" # "https://isso.example.com/js/embed.min.js"
 dataAttrs = "" # "data-isso='https://isso.example.com' data-isso-require-author='true'"
 
 [params.comments.staticman]
-enable = true
+enable = false
 apiEndpoint = "https://api.staticman.net/v2/entry"
 maxDepth = 2
 
@@ -128,16 +128,24 @@ name = "Home"
 weight = 10
 identifier = "repositor"
 url = "/"
+
 [[menu.main]]
 name = "Projects"
-#weight = 30
-#identifier = "ca"
+weight = 50
+identifier = "ca"
 url = "/tags/project"
+
 [[menu.main]]
 name = "Tags"
-#weight = 30
+weight = 50
 #identifier = "ca"
 url = "/tags/"
+
+#[[menu.main]]
+#name = "Archives"
+#weight = 300
+#identifier = "ca"
+#url = "/archives/"
 
 [blackfriday]
 hrefTargetBlank = true

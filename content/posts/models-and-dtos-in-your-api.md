@@ -4,7 +4,7 @@ description: "Why you should avoid using model objects in your API interfaces"
 date: 2018-12-12T15:08:34-05:00
 draft: true
 seq: 0004
-tags: ["#api","#csharp"]
+tags: ["api","csharp"]
 ---
 
 I religiously avoid using model objects on my API interfaces. The reason is really simple, a model is a business entity and you don't want to expose a business entity inadvertently to your API consumers. <!--more--> 

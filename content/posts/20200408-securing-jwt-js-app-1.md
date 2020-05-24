@@ -3,7 +3,7 @@ title: "Securing your jwt in a js app (video tutorial - part 1)"
 description: How to secure your jwt in a js app to prevent XSS attacks using .net core as a backend
 date: 2020-04-08T09:20:00
 draft: false
-tags: ["#csharp","#dotnetcore"]
+tags: ["csharp","dotnetcore"]
 ---
 
 Are you wondering where to store a jwt token in your js app ? In this video tutorial I explain where and how to store a jwt token in order to avoid XSS attacks. 

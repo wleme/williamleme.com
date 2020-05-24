@@ -4,7 +4,7 @@ description: "Want to start developing custom YNAB tools using .net core ?"
 date: 2019-01-30T15:03:09-05:00
 draft: false
 cover: /imgs/0006-ynablogo.png#center
-tags: ["#csharp"]
+tags: ["csharp"]
 ---
 
 Want to start developing custom YNAB tools using .net core ? You can use this github project as a base <!--more-->  [https://github.com/wleme/YnabDotNetCoreStarterKit]

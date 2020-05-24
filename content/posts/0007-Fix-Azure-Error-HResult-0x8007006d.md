@@ -3,7 +3,7 @@ title: "Fix Azure Error 0x8007006d / Event Id 1022 "
 description: How to fix Azure App Service Error 0x8007006d | Event Id 1022 | Message Id 0x250d
 date: 2020-04-07T08:20:00
 draft: false
-tags: ["#azure"]
+tags: ["azure"]
 ---
 
 After almost 3 years of flawless service availability my app service came to a halt with the following event entry

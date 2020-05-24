@@ -7,10 +7,10 @@ seq: 0002
 #images: ["/imgs/0002 - sql server on linux cover.png"]
 cover: /imgs/0002 - sql server and linux.png#center 
 categories: [DevOps]
-tags: ["#linux","#devops","#sqlserver"]
+tags: ["linux","devops","sqlserver"]
 ---
-### In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio)
-I keep all my databases, queues and other infrastructure tools on a linux box running as docker containers. Docker gives me the flexibility of installing multiple things 
+### In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio)  
+<!--more--> I keep all my databases, queues and other infrastructure tools on a linux box running as docker containers. Docker gives me the flexibility of installing multiple things 
 without messing up my dev environment and I recently added SqlServer
 
 #### Pull the docker image into your linux box
