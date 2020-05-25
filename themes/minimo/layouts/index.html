@@ -7,13 +7,23 @@
 </div>
 {{ end }}
 
+
+
 {{- $homepageWidgets := .Site.Params.widgets.homepage -}}
 {{- if $homepageWidgets -}}
+
 <div class='home-widgets'>
   <div class='container sep-before'>
     {{- partial "extras/widget_area" ( dict "Widgets" $homepageWidgets "Scope" . ) -}}
+    <div style="display: flex;
+    width: 100%;
+    margin-top: 1em;font-weight: 600;">
+      >> <a href="/posts">See all</a>
+    </div>
   </div>
+  
 </div>
+
 {{- end -}}
 
 {{ partial "footer" . }}

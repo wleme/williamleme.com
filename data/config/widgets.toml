@@ -1,7 +1,7 @@
 # About Widget config
-#[about]
-#title = ""                            # default: .Site.Title
-#description = ""                      # default: .Site.Params.info.description
+[about]
+title = " "                            # default: .Site.Title
+description = "Hello! I’m William Leme, a head of software development based in sunny Jacksonville, Florida / USA"                      # default: .Site.Params.info.description
 #logo = "/images/logo.png"             # default: "/images/logo.png"
 
 # Breadcrumbs Widget config
@@ -33,5 +33,5 @@ excludeTypes = ["page"]               # default: ["page"]
 #[taxonomy_cloud]
 #title = ""                            # default: Plural Name for `taxonomyCloud.taxonomy`
 #taxonomy = "tags"                     # default: "tags"
-#shuffle = true                        # default: true
+#shuffle = false                        # default: true
 
