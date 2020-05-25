@@ -2,7 +2,7 @@
 comments: false
 title: "Archives"
 menu: main
-draft: false
+draft: true
 weight: 999
 type: page
 layout: archive

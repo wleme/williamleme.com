@@ -130,8 +130,14 @@ identifier = "repositor"
 url = "/"
 
 [[menu.main]]
+name = "Blog"
+weight = 20
+#identifier = "ca"
+url = "/posts/"
+
+[[menu.main]]
 name = "Projects"
-weight = 50
+weight = 40
 identifier = "ca"
 url = "/tags/project"
 
