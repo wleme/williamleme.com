@@ -22,7 +22,7 @@ enableEmoji = true
 defaultContentLanguage = "en"
 
 [params.info]
-description = "Software Engineer"
+description = "Software Engineer | .Net Core | NodeJs | Js | Azure"
 title404 = "Nothing's here!"
 
 [params.assets]
@@ -110,7 +110,7 @@ username = "MunifTanjim"
 repository = "minimo"
 
 [params.search]
-client = "" # algolia / fuse / lunr
+client = "fuse" # algolia / fuse / lunr
 
 [params.search.algolia]
 appId = ""
@@ -156,8 +156,12 @@ url = "/tags/"
 #identifier = "ca"
 #url = "/archives/"
 
-[blackfriday]
-hrefTargetBlank = true
+[markup]
+  defaultMarkdownHandler = "blackfriday"
+  [markup.blackfriday]
+    hrefTargetBlank = true
+
+#hrefTargetBlank = true
 
 [languages]
 # edit this block for your own language

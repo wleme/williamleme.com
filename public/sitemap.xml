@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
@@ -8,8 +8,98 @@
   </url>
   
   <url>
+    <loc>https://www.williamleme.com/posts/20200524-validating-environment-variables-in-nodejs/</loc>
+    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/nodejs/</loc>
+    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/</loc>
+    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/</loc>
+    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/</loc>
+    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/csharp/</loc>
+    <lastmod>2020-04-08T09:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/dotnetcore/</loc>
+    <lastmod>2020-04-08T09:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/20200408-securing-jwt-js-app-1/</loc>
+    <lastmod>2020-04-08T09:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/azure/</loc>
+    <lastmod>2020-04-07T08:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/0007-fix-azure-error-hresult-0x8007006d/</loc>
+    <lastmod>2020-04-07T08:20:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/0006-ynab-starter-kit-net-core-2.2/</loc>
+    <lastmod>2019-01-30T15:03:09-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/0005-accessing-oauth-access-token-asp-core-2/</loc>
+    <lastmod>2019-01-29T15:39:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/categories/.net/</loc>
+    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/api/</loc>
+    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/categories/</loc>
+    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/jsonpatch/</loc>
+    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.williamleme.com/posts/put-vs-patch-api-net-core/</loc>
     <lastmod>2018-12-12T08:04:16-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/categories/devops/</loc>
+    <lastmod>2018-12-08T06:37:27-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/devops/</loc>
+    <lastmod>2018-12-08T06:37:27-05:00</lastmod>
   </url>
   
   <url>
@@ -18,108 +108,49 @@
   </url>
   
   <url>
-    <loc>https://www.williamleme.com/posts/how-to-handle-enums-net-core/</loc>
-    <lastmod>2018-12-06T16:48:04-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/tags/api/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/tags/csharp/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/tags/devops/</loc>
-    <lastmod>2018-12-08T06:37:27-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/tags/enumerators/</loc>
-    <lastmod>2018-12-06T16:48:04-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/tags/enums/</loc>
-    <lastmod>2018-12-06T16:48:04-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/tags/jsonpatch/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://www.williamleme.com/tags/linux/</loc>
     <lastmod>2018-12-08T06:37:27-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.williamleme.com/tags/sqlserver/</loc>
     <lastmod>2018-12-08T06:37:27-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/categories/.net/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/authors/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/categories/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/categories/devops/</loc>
-    <lastmod>2018-12-08T06:37:27-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
     <loc>https://www.williamleme.com/page/</loc>
     <lastmod>2018-12-06T22:33:40-05:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.williamleme.com/posts/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.williamleme.com/tags/enumerators/</loc>
+    <lastmod>2018-12-06T16:48:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/how-to-handle-enums-net-core/</loc>
+    <lastmod>2018-12-06T16:48:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/enums/</loc>
+    <lastmod>2018-12-06T16:48:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/authors/</loc>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/donation/</loc>
   </url>
   
   <url>
     <loc>https://www.williamleme.com/series/</loc>
-    <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.williamleme.com/tags/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/</loc>
-    <lastmod>2018-12-06T22:33:40-05:00</lastmod>
-    <priority>0</priority>
+    <loc>https://www.williamleme.com/wllapps/</loc>
   </url>
   
 </urlset>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>.Net on William Leme</title>
@@ -16,9 +16,7 @@
       <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
       
       <guid>https://www.williamleme.com/posts/put-vs-patch-api-net-core/</guid>
-      <description>There are 2 http verbs that can be used when updating a resource: Put and Patch but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.
-Let&amp;rsquo;s code! Given the following model:
-1 2 3 4 5 6 7 8  public class Customer{public int Id { get; set; }public string FirstName { get; set; }public string MiddleName { get; set; }public string LastName { get; set; }public DateTime DateOfBirth { get; set; }}   and the following dto&amp;rsquo;s</description>
+      <description>&lt;p&gt;There are 2 http verbs that can be used when updating a resource: &lt;strong&gt;Put&lt;/strong&gt; and &lt;strong&gt;Patch&lt;/strong&gt; but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.&lt;/p&gt;</description>
     </item>
     
     <item>

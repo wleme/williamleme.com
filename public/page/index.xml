@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on William Leme</title>
@@ -16,8 +16,28 @@
       <pubDate>Thu, 06 Dec 2018 22:33:40 -0500</pubDate>
       
       <guid>https://www.williamleme.com/about/</guid>
-      <description>I’m a lead .Net Software Engineer in sunny Jacksonville/FL and am all about adding value to software products, automating processes and promoting a growth mindset within businesses.
-Wanna connect ? Send me an email: contact@williamleme.com</description>
+      <description>[Software Engineer Manager | Full Stack Dev | Cloud Platform Services]
+Hello! I&amp;rsquo;m William Leme, a head of software development based in sunny Jacksonville, Florida / USA. I&amp;rsquo;m all about adding value to software products, automating processes, promoting a growth mindset within businesses and people, and creating strong teams.
+If you want to reach out you can send an email to: contact at williamleme dot com or find me on the channels bellow.</description>
+    </item>
+    
+    <item>
+      <title>Donation</title>
+      <link>https://www.williamleme.com/donation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/donation/</guid>
+      <description>If you enjoyed any of my apps you can make buy me a coffee via PayPal below. (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=9754RNVZ3HVT2&amp;amp;source=url)</description>
+    </item>
+    
+    <item>
+      <title>wllapps</title>
+      <link>https://www.williamleme.com/wllapps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/wllapps/</guid>
+      <description>Hello,
+I publish some of my projects at wllapps.com. You can find a list of them here and more about me here.</description>
     </item>
     
   </channel>

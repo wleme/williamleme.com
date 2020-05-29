@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>William Leme</title>
     <link>https://www.williamleme.com/</link>
     <description>Recent content on William Leme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 06 Dec 2018 22:33:40 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 19:37:18 -0400</lastBuildDate>
     
 	<atom:link href="https://www.williamleme.com/index.xml" rel="self" type="application/rss+xml" />
     
@@ -16,8 +16,55 @@
       <pubDate>Thu, 06 Dec 2018 22:33:40 -0500</pubDate>
       
       <guid>https://www.williamleme.com/about/</guid>
-      <description>I’m a lead .Net Software Engineer in sunny Jacksonville/FL and am all about adding value to software products, automating processes and promoting a growth mindset within businesses.
-Wanna connect ? Send me an email: contact@williamleme.com</description>
+      <description>[Software Engineer Manager | Full Stack Dev | Cloud Platform Services]
+Hello! I&amp;rsquo;m William Leme, a head of software development based in sunny Jacksonville, Florida / USA. I&amp;rsquo;m all about adding value to software products, automating processes, promoting a growth mindset within businesses and people, and creating strong teams.
+If you want to reach out you can send an email to: contact at williamleme dot com or find me on the channels bellow.</description>
+    </item>
+    
+    <item>
+      <title>Automatically checking whether environment variables exist in the host OS (Nodejs)</title>
+      <link>https://www.williamleme.com/posts/20200524-validating-environment-variables-in-nodejs/</link>
+      <pubDate>Sun, 24 May 2020 19:37:18 -0400</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/20200524-validating-environment-variables-in-nodejs/</guid>
+      <description>If you use nodemon during dev you may know you can define a file called nodemon.json with all the environment variables your app uses:
+1 2 3 4 5 6 7  { &amp;#34;env&amp;#34; : { &amp;#34;APP_MONGO_CONN&amp;#34;:&amp;#34;mongodb://user:password@192.0.0.1:27017/db&amp;#34;, &amp;#34;APP_PORT&amp;#34;:3000, &amp;#34;APP_REDIS&amp;#34;:&amp;#34;redis://password@192.0.0.1&amp;#34; } }    That works just fine during development but once you publish your app to production you are on your own. We have to have those environment variables defined at the OS level otherwise your app will crash and depending on your logging strategy you may spend lots of time trying to figure it out.</description>
+    </item>
+    
+    <item>
+      <title>Securing your jwt in a js app (video tutorial - part 1)</title>
+      <link>https://www.williamleme.com/posts/20200408-securing-jwt-js-app-1/</link>
+      <pubDate>Wed, 08 Apr 2020 09:20:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/20200408-securing-jwt-js-app-1/</guid>
+      <description>&lt;p&gt;Are you wondering where to store a jwt token in your js app ? In this video tutorial I explain where and how to store a jwt token in order to avoid XSS attacks.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Fix Azure Error 0x8007006d / Event Id 1022 </title>
+      <link>https://www.williamleme.com/posts/0007-fix-azure-error-hresult-0x8007006d/</link>
+      <pubDate>Tue, 07 Apr 2020 08:20:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/0007-fix-azure-error-hresult-0x8007006d/</guid>
+      <description>&lt;p&gt;After almost 3 years of flawless service availability my app service came to a halt with the following event entry&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>YNAB starter kit in .Net Core 2.2</title>
+      <link>https://www.williamleme.com/posts/0006-ynab-starter-kit-net-core-2.2/</link>
+      <pubDate>Wed, 30 Jan 2019 15:03:09 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/0006-ynab-starter-kit-net-core-2.2/</guid>
+      <description>&lt;p&gt;Want to start developing custom YNAB tools using .net core ? You can use this github project as a base&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Accessing OAuth access token in Asp.Net Core 2</title>
+      <link>https://www.williamleme.com/posts/0005-accessing-oauth-access-token-asp-core-2/</link>
+      <pubDate>Tue, 29 Jan 2019 15:39:04 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/0005-accessing-oauth-access-token-asp-core-2/</guid>
+      <description>&lt;p&gt;You can easily access the OAuth access token by calling&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -26,9 +73,7 @@ Wanna connect ? Send me an email: contact@williamleme.com</description>
       <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
       
       <guid>https://www.williamleme.com/posts/put-vs-patch-api-net-core/</guid>
-      <description>There are 2 http verbs that can be used when updating a resource: Put and Patch but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.
-Let&amp;rsquo;s code! Given the following model:
-1 2 3 4 5 6 7 8  public class Customer{public int Id { get; set; }public string FirstName { get; set; }public string MiddleName { get; set; }public string LastName { get; set; }public DateTime DateOfBirth { get; set; }}   and the following dto&amp;rsquo;s</description>
+      <description>&lt;p&gt;There are 2 http verbs that can be used when updating a resource: &lt;strong&gt;Put&lt;/strong&gt; and &lt;strong&gt;Patch&lt;/strong&gt; but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,8 +82,7 @@ Let&amp;rsquo;s code! Given the following model:
       <pubDate>Sat, 08 Dec 2018 06:37:27 -0500</pubDate>
       
       <guid>https://www.williamleme.com/posts/installing-sqlserver-on-linux/</guid>
-      <description>In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio) I keep all my databases, queues and other infrastructure tools on a linux box running as docker containers. Docker gives me the flexibility of installing multiple things without messing up my dev environment and I recently added SqlServer
-Pull the docker image into your linux box sudo docker pull mcr.</description>
+      <description>&lt;h3 id=&#34;in-this-tutorial-we-will-pull-a-sql-server-docker-image-create-a-docker-compose-script-and-connect-to-this-new-server-using-ssms-sql-server-management-studio&#34;&gt;In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio)&lt;/h3&gt;</description>
     </item>
     
     <item>
@@ -48,6 +92,25 @@ Pull the docker image into your linux box sudo docker pull mcr.</description>
       
       <guid>https://www.williamleme.com/posts/how-to-handle-enums-net-core/</guid>
       <description>You should never make your api consumers understand your enums. They should never send or receive numbers (10, 20, &amp;hellip;) for things like AddressType, Gender, Day of the week and so forth. What does number 10 mean anyway ? You don&amp;rsquo;t even know yourself! This project shows how we can deal with a string coming in, convert it to an enumerator and respond to the caller by sending a string again.</description>
+    </item>
+    
+    <item>
+      <title>Donation</title>
+      <link>https://www.williamleme.com/donation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/donation/</guid>
+      <description>If you enjoyed any of my apps you can make buy me a coffee via PayPal below. (https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;amp;hosted_button_id=9754RNVZ3HVT2&amp;amp;source=url)</description>
+    </item>
+    
+    <item>
+      <title>wllapps</title>
+      <link>https://www.williamleme.com/wllapps/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/wllapps/</guid>
+      <description>Hello,
+I publish some of my projects at wllapps.com. You can find a list of them here and more about me here.</description>
     </item>
     
   </channel>

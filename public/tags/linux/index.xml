@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>#linux on William Leme</title>
+    <title>linux on William Leme</title>
     <link>https://www.williamleme.com/tags/linux/</link>
-    <description>Recent content in #linux on William Leme</description>
+    <description>Recent content in linux on William Leme</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Sat, 08 Dec 2018 06:37:27 -0500</lastBuildDate>
     
@@ -16,8 +16,7 @@
       <pubDate>Sat, 08 Dec 2018 06:37:27 -0500</pubDate>
       
       <guid>https://www.williamleme.com/posts/installing-sqlserver-on-linux/</guid>
-      <description>In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio) I keep all my databases, queues and other infrastructure tools on a linux box running as docker containers. Docker gives me the flexibility of installing multiple things without messing up my dev environment and I recently added SqlServer
-Pull the docker image into your linux box sudo docker pull mcr.</description>
+      <description>&lt;h3 id=&#34;in-this-tutorial-we-will-pull-a-sql-server-docker-image-create-a-docker-compose-script-and-connect-to-this-new-server-using-ssms-sql-server-management-studio&#34;&gt;In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio)&lt;/h3&gt;</description>
     </item>
     
   </channel>

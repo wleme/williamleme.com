@@ -1,17 +1,53 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on William Leme</title>
     <link>https://www.williamleme.com/tags/</link>
     <description>Recent content in Tags on William Leme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 12 Dec 2018 08:04:16 -0500</lastBuildDate>
+    <lastBuildDate>Sun, 24 May 2020 19:37:18 -0400</lastBuildDate>
     
 	<atom:link href="https://www.williamleme.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>#api</title>
+      <title>nodejs</title>
+      <link>https://www.williamleme.com/tags/nodejs/</link>
+      <pubDate>Sun, 24 May 2020 19:37:18 -0400</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>csharp</title>
+      <link>https://www.williamleme.com/tags/csharp/</link>
+      <pubDate>Wed, 08 Apr 2020 09:20:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/csharp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>dotnetcore</title>
+      <link>https://www.williamleme.com/tags/dotnetcore/</link>
+      <pubDate>Wed, 08 Apr 2020 09:20:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/dotnetcore/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>azure</title>
+      <link>https://www.williamleme.com/tags/azure/</link>
+      <pubDate>Tue, 07 Apr 2020 08:20:00 +0000</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/azure/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>api</title>
       <link>https://www.williamleme.com/tags/api/</link>
       <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
       
@@ -20,43 +56,7 @@
     </item>
     
     <item>
-      <title>#csharp</title>
-      <link>https://www.williamleme.com/tags/csharp/</link>
-      <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
-      
-      <guid>https://www.williamleme.com/tags/csharp/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>#devops</title>
-      <link>https://www.williamleme.com/tags/devops/</link>
-      <pubDate>Sat, 08 Dec 2018 06:37:27 -0500</pubDate>
-      
-      <guid>https://www.williamleme.com/tags/devops/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>#enumerators</title>
-      <link>https://www.williamleme.com/tags/enumerators/</link>
-      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
-      
-      <guid>https://www.williamleme.com/tags/enumerators/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>#enums</title>
-      <link>https://www.williamleme.com/tags/enums/</link>
-      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
-      
-      <guid>https://www.williamleme.com/tags/enums/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>#jsonpatch</title>
+      <title>jsonpatch</title>
       <link>https://www.williamleme.com/tags/jsonpatch/</link>
       <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
       
@@ -65,7 +65,16 @@
     </item>
     
     <item>
-      <title>#linux</title>
+      <title>devops</title>
+      <link>https://www.williamleme.com/tags/devops/</link>
+      <pubDate>Sat, 08 Dec 2018 06:37:27 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/devops/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>linux</title>
       <link>https://www.williamleme.com/tags/linux/</link>
       <pubDate>Sat, 08 Dec 2018 06:37:27 -0500</pubDate>
       
@@ -74,11 +83,29 @@
     </item>
     
     <item>
-      <title>#sqlserver</title>
+      <title>sqlserver</title>
       <link>https://www.williamleme.com/tags/sqlserver/</link>
       <pubDate>Sat, 08 Dec 2018 06:37:27 -0500</pubDate>
       
       <guid>https://www.williamleme.com/tags/sqlserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enumerators</title>
+      <link>https://www.williamleme.com/tags/enumerators/</link>
+      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/enumerators/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>enums</title>
+      <link>https://www.williamleme.com/tags/enums/</link>
+      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/enums/</guid>
       <description></description>
     </item>
     
