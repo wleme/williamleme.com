@@ -8,11 +8,26 @@
 {{ end }}
 
 
+{{ $paginator := .Paginate ( where .Site.RegularPages "Type" "ne" "page") }}
 
 {{- $homepageWidgets := .Site.Params.widgets.homepage -}}
 {{- if $homepageWidgets -}}
+<!-- (where .Pages "Type" "posts")  -->
+<div class='container list-container'>
+  <ul class='list'>
+    <!-- { range .Paginator.Pages } -->
+     {{ range $paginator.Pages }}
+      {{ .Render "li" }}
+      <!-- <div style="font-size: 13px;">
+      {{ .Params.tags }}
+    </div> -->
+    {{ end }}
+  </ul>
 
-<div class='home-widgets'>
+  {{ partial "nav/pagination" . }}
+</div>
+
+<!-- <div class='home-widgets'>
   <div class='container sep-before'>
     {{- partial "extras/widget_area" ( dict "Widgets" $homepageWidgets "Scope" . ) -}}
     <div style="display: flex;
@@ -22,7 +37,7 @@
     </div>
   </div>
   
-</div>
+</div> -->
 
 {{- end -}}
 

@@ -1,9 +1,9 @@
 ---
-title: "Project: Url Shortener"
-description: "NodeJs / Express + EJS + MongoDb + Redis"
+title: "Designing and implementing a Url Shortener Web App in NodeJs + EJS + MongoDb + Redis"
 date: 2020-05-28T07:01:23-04:00
 draft: false
 tags: ["project","nodejs","mongodb"]
+categories: ["nodejs"]
 ---
 
 Url: https://s.wllapps.com
