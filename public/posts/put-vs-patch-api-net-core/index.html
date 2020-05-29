@@ -44,8 +44,6 @@ if (!doNotTrack) {
     <ul><li class='item'>
         <a href='/'>Home</a>
       </li><li class='item'>
-        <a href='/posts/'>Blog</a>
-      </li><li class='item'>
         <a href='/tags/project'>Projects</a>
       </li><li class='item'>
         <a href='/about/'>About</a>
@@ -59,7 +57,7 @@ if (!doNotTrack) {
 
       <header id='header' class='header site-header'>
         <div class='container sep-after'>
-          <div class='header-info'><p class='site-title title'>William Leme</p><p class='desc site-desc'>Software Engineer</p>
+          <div class='header-info'><p class='site-title title'>William Leme</p><p class='desc site-desc'>Software Engineer | .Net Core | NodeJs | Js | Azure</p>
           </div>
         </div>
       </header>
@@ -113,7 +111,9 @@ if (!doNotTrack) {
 
   <div class='container entry-content'>
   <p>There are 2 http verbs that can be used when updating a resource: <strong>Put</strong> and <strong>Patch</strong> but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.</p>
+
 <p>Let&rsquo;s code! Given the following model:</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -137,7 +137,9 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>and the following dto&rsquo;s</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -169,11 +171,14 @@ if (!doNotTrack) {
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <blockquote>
-<p><strong>&ldquo;What the heck! You have the same thing in different places!&quot;</strong> I never expose my models on my public Api&rsquo;s even though they may be 100% identical. I like to be as explicit as possible when it comes to what information I expose over the boundaries of my app. Changing the model by adding a new property will expose
+<p><strong>&ldquo;What the heck! You have the same thing in different places!&rdquo;</strong> I never expose my models on my public Api&rsquo;s even though they may be 100% identical. I like to be as explicit as possible when it comes to what information I expose over the boundaries of my app. Changing the model by adding a new property will expose
 the same property to the Api and that may not be what you want. There are tools such as AutoMapper that make this process of converting Model&lt;-&gt;Dto a breeze.</p>
 </blockquote>
+
 <h4 id="post-implementation">Post implementation</h4>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -221,7 +226,9 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>Post request</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -239,7 +246,9 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>Post response</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -261,8 +270,11 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>The new customer has been added but now I want to change it and give it a middle name. I&rsquo;ll first implement the <strong>Put</strong> verb</p>
+
 <h4 id="put-implementation">Put implementation</h4>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -308,8 +320,11 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>As I mentioned in the beginning of this post the <strong>put</strong> verb updates the <strong>entire resource</strong>. Ie. You have to send the new property value along with everything else.</p>
+
 <p>Put request</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -331,7 +346,9 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>Put response</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -353,9 +370,13 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>The client needs to first issue a get, update the property and then issue a put. What if we try to make the client faster by eliminating the first call and just send up the property that has changed ?</p>
-<h4 id="put-implementation---trying-to-send-only-1-property">Put implementation - trying to send only 1 property</h4>
+
+<h4 id="put-implementation-trying-to-send-only-1-property">Put implementation - trying to send only 1 property</h4>
+
 <p>Put request:</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -371,7 +392,9 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>Put response:</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -393,14 +416,22 @@ the same property to the Api and that may not be what you want. There are tools 
 </code></pre></td></tr></table>
 </div>
 </div>
-<p><strong>&ldquo;Oh No!!!Where&rsquo;s everything else ?!&quot;</strong> Sorry, but you have updated the entire resource and lost all those values. Hopefully your back-up is up-to-date. 😃</p>
+
+<p><strong>&ldquo;Oh No!!!Where&rsquo;s everything else ?!&rdquo;</strong> Sorry, but you have updated the entire resource and lost all those values. Hopefully your back-up is up-to-date. 😃</p>
+
 <p><strong>&ldquo;Bummer! Ok, I&rsquo;ll check for null properties and update the resource accordingly&rdquo;</strong> Not quite there! What if you want to update a field to Null ?</p>
-<p>What we want to do is to update the resource partially. Ie. We want to <strong>patch</strong> it but by just having a new verb Patch is not magically handle everything for you. 
+
+<p>What we want to do is to update the resource partially. Ie. We want to <strong>patch</strong> it but by just having a new verb Patch is not magically handle everything for you.
 You need to send to the api endpoint not just the new value but what you are doing with it.</p>
-<h4 id="hello-json-patch-">Hello JSON Patch 💗</h4>
+
+<h4 id="hello-json-patch">Hello JSON Patch 💗</h4>
+
 <p>JSON Patch is a contract for describing changes on a JSON document in a very explicit way. You client can tell things such as whether they are adding, replacing or removing values from the JSON document.</p>
+
 <h4 id="patch-implementation">Patch implementation</h4>
+
 <p>You first need to pull in a package called &ldquo;JSON Patch&rdquo; which adds support to your .Net Core Api</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -458,10 +489,14 @@ You need to send to the api endpoint not just the new value but what you are doi
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>Since we are receiving a &lt; CustomerDto &gt; we first need to convert the database entry to the same dto type (line 9) and then we <strong>patch</strong> it
 with the values that are coming in (line 11). Now we can merge the original model with the dto which will result in a model with the updated values (line 12).</p>
-<h4 id="what-my-clients-need-to-send-">What my clients need to send ?</h4>
+
+<h4 id="what-my-clients-need-to-send">What my clients need to send ?</h4>
+
 <p>Your clients need to explicitly say what they are doing. Ie. They need to send up a specific JSON document:</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -479,10 +514,14 @@ with the values that are coming in (line 11). Now we can merge the original mode
 </code></pre></td></tr></table>
 </div>
 </div>
-<p>The sample above has 3 operations Replace, Add and Remove. The first one replaces the value of a property named baz. The 2nd one 
+
+<p>The sample above has 3 operations Replace, Add and Remove. The first one replaces the value of a property named baz. The 2nd one
 adds a new property to the document and the 3rd one removes.</p>
+
 <p>Now we have everything in place and we can finally send just a single property:</p>
+
 <p>Patch request:</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -498,7 +537,9 @@ adds a new property to the document and the 3rd one removes.</p>
 </code></pre></td></tr></table>
 </div>
 </div>
+
 <p>Patch response:</p>
+
 <div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
 <table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -520,7 +561,8 @@ adds a new property to the document and the 3rd one removes.</p>
 </code></pre></td></tr></table>
 </div>
 </div>
-<p><strong><a href="https://github.com/wleme/SamplePutPatchNetCore">Source Code</a></strong></p>
+
+<p><strong><a href="https://github.com/wleme/SamplePutPatchNetCore" target="_blank">Source Code</a></strong></p>
 </div>
 
   

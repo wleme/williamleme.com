@@ -4,6 +4,7 @@ description: Checking whether all environment variables exist in the host OS dyn
 date: 2020-05-24T19:37:18-04:00
 draft: false
 tags: ["nodejs"]
+summary: How to check if all the environment variables are set in production ?
 ---
 
 If you use nodemon during dev you may know you can define a file called nodemon.json with all the environment variables your app uses:

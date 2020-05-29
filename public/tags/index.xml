@@ -5,17 +5,35 @@
     <link>https://www.williamleme.com/tags/</link>
     <description>Recent content in Tags on William Leme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 24 May 2020 19:37:18 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2020 07:01:23 -0400</lastBuildDate>
     
 	<atom:link href="https://www.williamleme.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>mongodb</title>
+      <link>https://www.williamleme.com/tags/mongodb/</link>
+      <pubDate>Thu, 28 May 2020 07:01:23 -0400</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/mongodb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>nodejs</title>
       <link>https://www.williamleme.com/tags/nodejs/</link>
-      <pubDate>Sun, 24 May 2020 19:37:18 -0400</pubDate>
+      <pubDate>Thu, 28 May 2020 07:01:23 -0400</pubDate>
       
       <guid>https://www.williamleme.com/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>project</title>
+      <link>https://www.williamleme.com/tags/project/</link>
+      <pubDate>Thu, 28 May 2020 07:01:23 -0400</pubDate>
+      
+      <guid>https://www.williamleme.com/tags/project/</guid>
       <description></description>
     </item>
     

@@ -44,8 +44,6 @@ if (!doNotTrack) {
     <ul><li class='item'>
         <a href='/'>Home</a>
       </li><li class='item'>
-        <a href='/posts/'>Blog</a>
-      </li><li class='item'>
         <a href='/tags/project'>Projects</a>
       </li><li class='item'>
         <a href='/about/'>About</a>
@@ -59,7 +57,7 @@ if (!doNotTrack) {
 
       <header id='header' class='header site-header'>
         <div class='container sep-after'>
-          <div class='header-info'><p class='site-title title'>William Leme</p><p class='desc site-desc'>Software Engineer</p>
+          <div class='header-info'><p class='site-title title'>William Leme</p><p class='desc site-desc'>Software Engineer | .Net Core | NodeJs | Js | Azure</p>
           </div>
         </div>
       </header>
@@ -118,14 +116,21 @@ if (!doNotTrack) {
 
   <div class='container entry-content'>
   <h3 id="in-this-tutorial-we-will-pull-a-sql-server-docker-image-create-a-docker-compose-script-and-connect-to-this-new-server-using-ssms-sql-server-management-studio">In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio)</h3>
+
 <p>I keep all my databases, queues and other infrastructure tools on a linux box running as docker containers. Docker gives me the flexibility of installing multiple things
 without messing up my dev environment and I recently added SqlServer</p>
+
 <h4 id="pull-the-docker-image-into-your-linux-box">Pull the docker image into your linux box</h4>
+
 <pre><code class="language-terminal" data-lang="terminal">sudo docker pull mcr.microsoft.com/mssql/server</code></pre>
-<h4 id="install-docker-compose-if-you-dont-have-it">Install docker compose (if you don&rsquo;t have it)</h4>
+
+<h4 id="install-docker-compose-if-you-don-t-have-it">Install docker compose (if you don&rsquo;t have it)</h4>
+
 <pre><code class="language-terminal" data-lang="terminal">sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.23.1/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose</code></pre>
-<h4 id="create-a-new-docker-composeyml-file">Create a new docker-compose.yml file</h4>
+
+<h4 id="create-a-new-docker-compose-yml-file">Create a new docker-compose.yml file</h4>
+
 <p><pre><code class="language-terminal" data-lang="terminal">sudo nano docker-compose.yml</code></pre>
 and type the following: (The configuration below will run the sql server container in the developer edition)
 <pre><code class="language-terminal" data-lang="terminal">version: &#39;3&#39;
@@ -141,6 +146,7 @@ services:
       - ./data/sqlserver1/:/var/opt/mssql
     ports:
       - &#34;1433:1433&#34;</code></pre></p>
+
 <ul>
 <li>Line 4 - Specifies the docker image we have just pulled.</li>
 <li>Line 6 - Tells the container it will always be restarted.</li>
@@ -148,13 +154,17 @@ services:
 <li>Line 11 - It specifies where the data will be persisted. If you don&rsquo;t specify anything here and remove the sql server container you will lose all the data.</li>
 <li>Line 13 - It exposes the container outside the docker. You want to map the port otherwise you won&rsquo;t have access to sql server from your dev environment.</li>
 </ul>
+
 <p>now we can start docker compose
 <pre><code class="language-terminal" data-lang="terminal">sudo docker-compose up</code></pre></p>
+
 <p>and make sure sql server is up
 <pre><code class="language-terminal" data-lang="terminal">sudo docker ps -a</code></pre>
 you should see the following
-![alt text](/imgs/0002 - sql server on linux.jpg &ldquo;SqlServer&rdquo;)</p>
+<img src="/imgs/0002 - sql server on linux.jpg" alt="alt text" title="SqlServer" /></p>
+
 <h4 id="connecting-via-ssms">Connecting via SSMS</h4>
+
 <p>Now that the server is up and running and the container is exposed to connections outside the docker, we are able to use it normally and connect to it via SSMS or our application.</p>
 </div>
 

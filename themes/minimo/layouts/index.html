@@ -18,6 +18,10 @@
     <!-- { range .Paginator.Pages } -->
      {{ range $paginator.Pages }}
       {{ .Render "li" }}
+      <!-- <div class="summary" style="padding-left:6em">
+        {{ .Summary }}
+      </div> -->
+      
       <!-- <div style="font-size: 13px;">
       {{ .Params.tags }}
     </div> -->

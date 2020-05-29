@@ -8,27 +8,52 @@
   </url>
   
   <url>
-    <loc>https://www.williamleme.com/posts/20200524-validating-environment-variables-in-nodejs/</loc>
-    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+    <loc>https://www.williamleme.com/categories/</loc>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/2020/0528-url-shortener/</loc>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/mongodb/</loc>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.williamleme.com/tags/nodejs/</loc>
-    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/categories/nodejs/</loc>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.williamleme.com/posts/</loc>
-    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/tags/project/</loc>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.williamleme.com/tags/</loc>
-    <lastmod>2020-05-24T19:37:18-04:00</lastmod>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.williamleme.com/</loc>
+    <lastmod>2020-05-28T07:01:23-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/posts/20200524-validating-environment-variables-in-nodejs/</loc>
     <lastmod>2020-05-24T19:37:18-04:00</lastmod>
   </url>
   
@@ -74,11 +99,6 @@
   
   <url>
     <loc>https://www.williamleme.com/tags/api/</loc>
-    <lastmod>2018-12-12T08:04:16-05:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.williamleme.com/categories/</loc>
     <lastmod>2018-12-12T08:04:16-05:00</lastmod>
   </url>
   
@@ -135,6 +155,10 @@
   <url>
     <loc>https://www.williamleme.com/tags/enums/</loc>
     <lastmod>2018-12-06T16:48:04-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.williamleme.com/asdf/</loc>
   </url>
   
   <url>

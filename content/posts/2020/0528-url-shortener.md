@@ -4,9 +4,10 @@ date: 2020-05-28T07:01:23-04:00
 draft: false
 tags: ["project","nodejs","mongodb"]
 categories: ["nodejs"]
+summary: A url shortener web app built in NodeJs + EJS + MongoDb + Redis
 ---
 
-Url: https://s.wllapps.com
+url: https://s.wllapss.com
 
 I put together a new toy project: A url shortener web app hosted at https://s.wllapps.com and built with nodejs / express + ejs + redis + mongodb. The idea is really simple, a full url is provided and a short version of it is returned e.g. _s.wllapps.com/code_ where _code_ is the unique identifier for that specific url.
 

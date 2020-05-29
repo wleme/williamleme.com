@@ -27,3 +27,12 @@ change layout\index.html and include
 
   {{ partial "nav/pagination" . }}
 </div>
+
+
+
+
+2) add to layout\_default\li.html
+
+<div class="summary" style="padding-left:6em">
+  {{ .Summary }}
+</div>

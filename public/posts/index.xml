@@ -5,10 +5,21 @@
     <link>https://www.williamleme.com/posts/</link>
     <description>Recent content in Posts on William Leme</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 24 May 2020 19:37:18 -0400</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2020 07:01:23 -0400</lastBuildDate>
     
 	<atom:link href="https://www.williamleme.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Designing and implementing a Url Shortener Web App in NodeJs &#43; EJS &#43; MongoDb &#43; Redis</title>
+      <link>https://www.williamleme.com/posts/2020/0528-url-shortener/</link>
+      <pubDate>Thu, 28 May 2020 07:01:23 -0400</pubDate>
+      
+      <guid>https://www.williamleme.com/posts/2020/0528-url-shortener/</guid>
+      <description>Url: https://s.wllapps.com
+I put together a new toy project: A url shortener web app hosted at https://s.wllapps.com and built with nodejs / express + ejs + redis + mongodb. The idea is really simple, a full url is provided and a short version of it is returned e.g. s.wllapps.com/code where code is the unique identifier for that specific url.
+When a new url comes in, this app generates a new code and stores it in nodejs.</description>
+    </item>
     
     <item>
       <title>Automatically checking whether environment variables exist in the host OS (Nodejs)</title>
