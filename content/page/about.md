@@ -11,7 +11,7 @@ weight: 50
 
 Hello! I'm William Leme, a head of software development based in sunny Jacksonville, Florida / USA. I'm all about adding value to software products, automating processes, promoting a growth mindset within businesses and people, and creating strong teams.
 
-If you want to reach out you can send an email to: **__contact at williamleme dot com__** or find me on the channels bellow.
+If you want to reach out you can send an email to: **__contact@williamleme.com__** or find me on the channels bellow.
 
 -----------------------
 
