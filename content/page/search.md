@@ -1,6 +1,6 @@
 ---
 type: page
-title: asdf
+title: Search
 layout: search
 outputs:
   - html
