@@ -9,13 +9,11 @@ weight: 50
 
 *[Software Engineer Manager | Full Stack Dev | Cloud Platform Services]* 
 
-Hello! I'm William Leme, a head of software development based in sunny Jacksonville, Florida / USA. I'm all about adding value to software products, automating processes, promoting a growth mindset within businesses and people, and creating strong teams. 
+Hello! I'm William Leme, a head of software development based in sunny Jacksonville, Florida / USA. I'm all about adding value to software products, automating processes, promoting a growth mindset within businesses and people, and creating strong teams. You can check out my professional background on my [LinkedIn page](https://linkedin.com/in/williamleme).
 
-If you want to reach out you can send an email to: __[contact@williamleme.com](mailto:contact@williamleme.com)__. I love talking about Software Architecture, JavaScript/TypeScript, C#, ASP.NET Core, Blazor, Web API, Angular, VueJs, Node.js, Docker, Azure, HTML5, jQuery, SQL/NoSQL. <br>
+I talk about Software Architecture, JavaScript/TypeScript, C#, .NET Core, Blazor, Web API, Angular, VueJs, Node.js, DevOps, Azure, HTML5 and SQL/NoSQL. I also publish my side projects [here](/tags/myapps).
 
-You can also find me on the channels below:<br>
-[Linkedin](https://linkedin.com/in/williamleme) [Twitter](https://twitter.com/wleme) [Youtube](https://www.youtube.com/channel/UCOnXHGy6vhdGCKZtxgzggPg)
-
+You can reach me at [contact@williamleme.com](mailto:contact@williamleme.com) or twitter at https://twitter.com/wleme.
 
 -----------------------
 

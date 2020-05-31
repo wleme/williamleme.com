@@ -2,7 +2,7 @@
 title: "App: A Url Shortener Web App in NodeJs + EJS + MongoDb + Redis"
 date: 2020-05-28T07:01:23-04:00
 draft: false
-tags: ["app","nodejs","mongodb"]
+tags: ["myapps","nodejs","mongodb"]
 categories: ["nodejs"]
 summary: A url shortener web app built in NodeJs + EJS + MongoDb + Redis
 ---

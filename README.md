@@ -1,7 +1,6 @@
+upgrade notes:
 
-upgrade:
-
-change layout\index.html and include
+1) change layout\index.html and include
 
 
     <div style="display: flex;
@@ -12,8 +11,7 @@ change layout\index.html and include
 
       or 
 
-      {{ $paginator := .Paginate ( where .Site.RegularPages "Type" "ne" "page") }}
-
+{{ $paginator := .Paginate ( where .Site.RegularPages "Type" "ne" "page") }}
 {{- $homepageWidgets := .Site.Params.widgets.homepage -}}
 {{- if $homepageWidgets -}}
 <!-- (where .Pages "Type" "posts")  -->
@@ -36,3 +34,6 @@ change layout\index.html and include
 <div class="summary" style="padding-left:6em">
   {{ .Summary }}
 </div>
+
+
+3) preserve content/css/custom
