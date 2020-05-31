@@ -139,10 +139,10 @@ url = "/"
 #url = "/posts/"
 
 [[menu.main]]
-name = "Projects"
+name = "Apps"
 weight = 40
-identifier = "ca"
-url = "/tags/project"
+#identifier = "apps"
+url = "/tags/app/"
 
 [[menu.main]]
 name = "Tags"

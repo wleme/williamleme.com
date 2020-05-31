@@ -5,7 +5,7 @@ comments: false
 
 Hello,
 
-I publish some of my toy projects at wllapps.com. You can find a list of them [here](/tags/project) and more about me [here](/about). 
+I publish some of my apps at wllapps.com. You can find a list of them [here](/tags/app) and more about me [here](/about). 
 
 
 

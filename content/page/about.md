@@ -11,9 +11,9 @@ weight: 50
 
 Hello! I'm William Leme, a head of software development based in sunny Jacksonville, Florida / USA. I'm all about adding value to software products, automating processes, promoting a growth mindset within businesses and people, and creating strong teams. 
 
-This is my blog where I talk about Software Architecture and Design, JavaScript/TypeScript, C#, ASP.NET Core, Blazor, Web API, Angular, VueJs, Node.js, Docker, Azure, HTML5, jQuery, SQL/NoSQL. You can also check out some of my side projects [here](/tags/project).
+If you want to reach out you can send an email to: __[contact@williamleme.com](mailto:contact@williamleme.com)__. I love talking about Software Architecture, JavaScript/TypeScript, C#, ASP.NET Core, Blazor, Web API, Angular, VueJs, Node.js, Docker, Azure, HTML5, jQuery, SQL/NoSQL. <br>
 
-If you want to reach out you can send an email to: **__[contact@williamleme.com](mailto:contact@williamleme.com)__** or find me on the channels bellow.:<br>
+You can also find me on the channels below:<br>
 [Linkedin](https://linkedin.com/in/williamleme) [Twitter](https://twitter.com/wleme) [Youtube](https://www.youtube.com/channel/UCOnXHGy6vhdGCKZtxgzggPg)
 
 

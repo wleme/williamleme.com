@@ -1,15 +1,15 @@
 ---
-title: "Designing and implementing a Url Shortener Web App in NodeJs + EJS + MongoDb + Redis"
+title: "App: A Url Shortener Web App in NodeJs + EJS + MongoDb + Redis"
 date: 2020-05-28T07:01:23-04:00
 draft: false
-tags: ["project","nodejs","mongodb"]
+tags: ["app","nodejs","mongodb"]
 categories: ["nodejs"]
 summary: A url shortener web app built in NodeJs + EJS + MongoDb + Redis
 ---
 
 Url: https://s.wllapps.com
 
-I put together a new toy project: A url shortener web app hosted at https://s.wllapps.com and built with nodejs / express + ejs + redis + mongodb. The idea is really simple, a full url is provided and a short version of it is returned e.g. _s.wllapps.com/code_ where _code_ is the unique identifier for that specific url.
+I have put together a new app: A url shortener web app hosted at https://s.wllapps.com and built with nodejs / express + ejs + redis + mongodb. The idea is really simple, a full url is provided and a short version of it is returned e.g. _s.wllapps.com/code_ where _code_ is the unique identifier for that specific url.
 
 When a new url comes in, this app generates a new code and stores it in nodejs. When there's a request for a given _code_ the web app pulls the mongo db document and redirects the user to its url.
 
