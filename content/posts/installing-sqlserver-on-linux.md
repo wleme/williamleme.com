@@ -8,7 +8,7 @@ seq: 0002
 cover: /imgs/0002 - sql server and linux.png#center 
 categories: [DevOps]
 tags: ["linux","devops","sqlserver"]
-summary: " "
+summary: "Using a sql server docker instance."
 ---
 ### In this tutorial we will pull a Sql Server docker image, create a docker-compose script and connect to this new server using SSMS (sql server management studio)  
 I keep all my databases, queues and other infrastructure tools on a linux box running as docker containers. Docker gives me the flexibility of installing multiple things 

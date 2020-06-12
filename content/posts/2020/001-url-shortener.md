@@ -1,5 +1,5 @@
 ---
-title: "App: A Url Shortener Web App in NodeJs + EJS + MongoDb + Redis"
+title: "App: A Url Shortener Web App"
 date: 2020-05-28T07:01:23-04:00
 draft: false
 tags: ["myapps","nodejs","mongodb"]

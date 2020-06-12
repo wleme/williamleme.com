@@ -8,6 +8,7 @@ categories: [.Net]
 seq: 0001
 cover: /imgs/0001 - Enums And Api.png#center
 tags: ["csharp","api","enums","enumerators"]
+summary: "Return self-explanatory codes from you Api"
 ---
 You should never make your api consumers understand your enums. They should never send or receive numbers (10, 20, ...) for things like AddressType, 
 Gender, Day of the week and so forth. What does number 10 mean anyway ? You don't even know yourself! This project shows how we can deal with a string coming in, convert it to an enumerator and respond to the caller by sending a string again.

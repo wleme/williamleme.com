@@ -3,6 +3,7 @@ title: "Using Ionic Ui Web components in a Blazor App"
 date: 2020-06-08T06:20:54-04:00
 draft: false
 tags: ["blazor"]
+summary: "How to use Ionic Web Components in a Blazor Web Assembly App "
 ---
 
 I'll be demonstrating how to use Ionic Web Components in a Blazor Web-Assembly App. This demo is built on top of the basic Blazor WASM project template available in Visual Studio.

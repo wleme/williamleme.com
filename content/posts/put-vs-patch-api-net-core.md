@@ -5,9 +5,11 @@ date: 2018-12-12T08:04:16-05:00
 draft: false
 categories: [.Net]
 tags: ["csharp","api","jsonpatch"]
+summary: "There are 2 http verbs that can be used when updating a resource: Put and Patch but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially."
+ #<!--more--> 
 ---
 
-There are 2 http verbs that can be used when updating a resource: **Put** and **Patch** but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.  <!--more--> 
+There are 2 http verbs that can be used when updating a resource: **Put** and **Patch** but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially. 
 
 Let's code! Given the following model:
 
