@@ -8,6 +8,9 @@
         {{- .Title -}}
       </a>
     </h3>
-    {{ .Summary }}
+    <a href='{{ .Permalink | relURL }}'>
+      {{ .Summary }}
+    </a>
+    
   </header>
 </li>
