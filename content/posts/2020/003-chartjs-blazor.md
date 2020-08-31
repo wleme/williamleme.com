@@ -1,9 +1,9 @@
 ---
-title: "Chart.js + Blazor"
+title: "Chart.js + Blazoar"
 description: "Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component"
 cover: "/imgs/2020/003-cover.png#center"
 date: 2020-06-12T07:43:27-04:00
-draft: false
+draft: true
 summary: "Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component"
 tags: ["blazor"]
 ---

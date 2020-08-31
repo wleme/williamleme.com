@@ -2,7 +2,7 @@
 title: "Installing SqlServer on Linux"
 description: "How to install sqlserver on a linux box using docker"
 date: 2018-12-08T06:37:27-05:00
-draft: false
+draft: true
 seq: 0002
 #images: ["/imgs/0002 - sql server on linux cover.png"]
 cover: /imgs/0002 - sql server and linux.png#center 

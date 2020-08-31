@@ -2,7 +2,7 @@
 title: "Models and DTOs in Your API"
 description: "Why you should avoid using model objects in your API interfaces"
 date: 2018-12-12T15:08:34-05:00
-draft: false
+draft: true
 seq: 0004
 tags: ["api","csharp"]
 ---

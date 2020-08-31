@@ -2,7 +2,7 @@
 title: "Securing your jwt in a js app (video tutorial - part 1)"
 description: How to secure your jwt in a js app to prevent XSS attacks using .net core as a backend
 date: 2020-04-08T09:20:00
-draft: false
+draft: true
 tags: ["csharp","dotnetcore"]
 summary: Where should you store a json web token in a single page application ? Local storage ? a Cookie ?
 ---

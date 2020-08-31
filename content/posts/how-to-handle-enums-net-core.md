@@ -3,7 +3,7 @@ title: "Enumerators in your Api - How to handle enums in your .Net Core Api"
 description: "How to handle enums in your .Net Core Api"
 #images: ["a.aa.jpg"]
 date: 2018-12-06T16:48:04-05:00
-draft: false
+draft: true
 categories: [.Net]
 seq: 0001
 cover: /imgs/0001 - Enums And Api.png#center

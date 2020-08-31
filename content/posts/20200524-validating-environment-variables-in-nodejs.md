@@ -2,7 +2,7 @@
 title: "Automatically checking whether environment variables exist in the host OS (Nodejs)"
 description: Checking whether all environment variables exist in the host OS dynamically when publishing your app to production.
 date: 2020-05-24T19:37:18-04:00
-draft: false
+draft: true
 tags: ["nodejs"]
 summary: How to check if all the environment variables are set in production ?
 ---

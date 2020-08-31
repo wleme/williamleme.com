@@ -21,8 +21,12 @@ enableEmoji = true
 # Missing translations will default to this content language
 defaultContentLanguage = "en"
 
+[about]
+title = "a"                            # default: .Site.Title
+description = "a"
+
 [params.info]
-description = "Software Engineer | .Net Core | NodeJs | Js | Azure"
+description = "Software Engineer Manager | Azure Cloud Architect | .Net Ecosystem | Javascript | Sql"
 title404 = "Nothing's here!"
 
 [params.assets]
@@ -76,10 +80,10 @@ titleSeparator = "•"
 
 [params.social]
 email = "contact@williamleme.com"
-github = "wleme"
+#github = "wleme"
 linkedin = "williamleme"
-twitter = "wleme"
-youtube = "UCOnXHGy6vhdGCKZtxgzggPg"
+#twitter = "wleme"
+#youtube = "UCOnXHGy6vhdGCKZtxgzggPg"
 
 [params.comments]
 enable = true
@@ -126,11 +130,11 @@ tag = "tags"
 [permalinks]
 page = "/:slug/"
 
-[[menu.main]]
-name = "Home"
-weight = 10
-identifier = "repositor"
-url = "/"
+#[[menu.main]]
+#name = "Home"
+#weight = 10
+#identifier = "repositor"
+#url = "/"
 
 #[[menu.main]]
 #name = "Blog"
@@ -138,17 +142,23 @@ url = "/"
 ##identifier = "ca"
 #url = "/posts/"
 
-[[menu.main]]
-name = "My Apps"
-weight = 40
+#[[menu.main]]
+#name = "My Apps"
+#weight = 40
 #identifier = "apps"
-url = "/tags/myapps/"
+#url = "/tags/myapps/"
 
-[[menu.main]]
-name = "Tags"
-weight = 50
+#[[menu.main]]
+#name = "Posts"
+#weight = 50
 #identifier = "ca"
-url = "/tags/"
+#url = "/posts/"
+
+#[[menu.main]]
+#name = "Tags"
+#weight = 50
+#identifier = "ca"
+#url = "/tags/"
 
 #[[menu.main]]
 #name = "Archives"

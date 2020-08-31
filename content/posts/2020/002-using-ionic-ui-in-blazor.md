@@ -1,7 +1,7 @@
 ---
 title: "Using Ionic Ui Web components in a Blazor App"
 date: 2020-06-08T06:20:54-04:00
-draft: false
+draft: true
 tags: ["blazor"]
 summary: "How to use Ionic Web Components in a Blazor Web Assembly App "
 ---
