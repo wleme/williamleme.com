@@ -26,7 +26,7 @@ title = "a"                            # default: .Site.Title
 description = "a"
 
 [params.info]
-description = "Software Engineer Manager | Azure Cloud Architect | .Net Ecosystem | Javascript | Sql"
+description = "Software Engineer Manager | Azure Cloud Architect | .Net Ecosystem | Javascript | Sql | NoSql"
 title404 = "Nothing's here!"
 
 [params.assets]
