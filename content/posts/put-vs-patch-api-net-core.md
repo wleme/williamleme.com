@@ -2,7 +2,7 @@
 title: "Put vs Patch Api in .Net Core"
 description: "When and how to use http verbs put and patch in your .Net Core Api"
 date: 2018-12-12T08:04:16-05:00
-draft: true
+draft: false
 categories: [.Net]
 tags: ["csharp","api","jsonpatch"]
 summary: "There are 2 http verbs that can be used when updating a resource: Put and Patch but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially."

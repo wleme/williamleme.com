@@ -1,21 +1,17 @@
 ---
 title: About
 date: 2018-12-06T22:33:40-05:00
-draft: true
+draft: false
 comments: false
 menu: main
 weight: 50
 ---
 
-*[Software Engineer Manager | Full Stack Dev | Cloud Platform Services]* 
+Hello! I'm __William Leme__, a head of software development based in sunny Jacksonville, Florida / USA. I’m all about adding value to software products, helping businesses achieve their goals, automating processes, making customers happy, promoting a growth mindset within businesses and people, and creating strong teams.  You can check out my professional profile on my [LinkedIn page](https://linkedin.com/in/williamleme).
 
-*[Software Engineer Manager | Azure Cloud Architect | .Net Ecosystem | Javascript | Sql]*
+My focus is on the business of software, software architecture, software quality, Agile/Lean business operations, Cloud platforms, Javascript/Typescript, c#, .Net Core, NodeJs, Ionic, Sql/NoSql Databases and DevOps. I occasianally blog about them [here](/posts) and also publish some of my toy projects [here](/tags/myapps).
 
-Hello! I'm __William Leme__, a head of software development based in sunny Jacksonville, Florida / USA. I’m all about adding value to software products, software architecture and scalability, automating processes, making customers happy,  promoting a growth mindset within businesses and people, and creating strong teams. You can check out my professional profile on my [LinkedIn page](https://linkedin.com/in/williamleme).
-
-I love talking about the business of software, software architechture, Cloud platforms, Javascript/Typescript, c#, .Net Core, NodeJs, Angular, VueJs, Sql/NoSql Databases and DevOps.
-
-You can reach me at [contact@williamleme.com](mailto:contact@williamleme.com).
+You can reach me at [contact@williamleme.com](mailto:contact@williamleme.com)
 
 -----------------------
 

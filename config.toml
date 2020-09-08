@@ -130,23 +130,23 @@ tag = "tags"
 [permalinks]
 page = "/:slug/"
 
-#[[menu.main]]
-#name = "Home"
-#weight = 10
+[[menu.main]]
+name = "Home"
+weight = 10
 #identifier = "repositor"
-#url = "/"
+url = "/"
 
-#[[menu.main]]
-#name = "Blog"
-#weight = 20
+[[menu.main]]
+name = "Blog"
+weight = 20
 ##identifier = "ca"
-#url = "/posts/"
+url = "/posts/"
 
-#[[menu.main]]
-#name = "My Apps"
-#weight = 40
-#identifier = "apps"
-#url = "/tags/myapps/"
+[[menu.main]]
+name = "My Toy Apps"
+weight = 40
+identifier = "apps"
+url = "/tags/myapps/"
 
 #[[menu.main]]
 #name = "Posts"

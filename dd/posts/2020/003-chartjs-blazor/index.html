@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang='en'><head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component'>
+<meta name='theme-color' content='#70caea'>
+
+<meta property='og:title' content='Chart.js &#43; Blazoar • William Leme'>
+<meta property='og:description' content='Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component'>
+<meta property='og:url' content='http://localhost:1313/posts/2020/003-chartjs-blazor/'>
+<meta property='og:site_name' content='William Leme'>
+<meta property='og:type' content='article'><meta property='og:image' content='http://localhost:1313/imgs/2020/003-cover.png'><meta property='article:section' content='posts'><meta property='article:tag' content='blazor'><meta property='article:published_time' content='2020-06-12T07:43:27-04:00'/><meta property='article:modified_time' content='2020-06-12T07:43:27-04:00'/><meta name='twitter:card' content='summary_large_image'><meta name='twitter:site' content='@wleme'><meta property='twitter:image' content='http://localhost:1313/imgs/2020/003-cover.png'>
+
+<meta name="generator" content="Hugo 0.71.0" />
+
+  <title>Chart.js &#43; Blazoar • William Leme</title>
+  <link rel='canonical' href='http://localhost:1313/posts/2020/003-chartjs-blazor/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css?v=2'><style>
+:root{--color-accent:#70caea;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50971964-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+<body class='page type-posts has-cover'>
+
+  <div class='site'><a class='screen-reader-text' href='#content'>Skip to Content</a><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    
+    <ul><li class='item'>
+        <a href='/'></a>
+      </li><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/posts/'>Blog</a>
+      </li><li class='item'>
+        <a href='/tags/myapps/'>My Toy Apps</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>William Leme</p><p class='desc site-desc'>Software Engineer Manager | Azure Cloud Architect | .Net Ecosystem | Javascript | Sql</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>Chart.js &#43; Blazoar</h1>
+      
+<p class='desc'>Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component</p>
+
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-06-12T07:43:27-04:00'>2020, Jun 12</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+4 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  <div class='entry-cover'>
+  <figure class='container cover-normal'>
+    <img src='/imgs/2020/003-cover.png#center'/>
+    
+  </figure>
+</div>
+  
+
+  <div class='container entry-content'>
+  
+
+<p>In this tutorial we will be creating a blazor component that receives the chart data and passes it to the <a href="https://www.chartjs.org" target="_blank">Chart js library</a>. This component will be limited to a Pie and Bar types but the idea is the same in case you want to implement other types.</p>
+
+<h2 id="adding-chart-js-to-the-project">Adding Chart.js to the project</h2>
+
+<p>Go to index html and add the Chart.js library from their cdn</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--index.html--&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></td></tr></table>
+</div>
+</div>
+
+<h2 id="creating-a-chart-blazor-component">Creating a Chart blazor component</h2>
+
+<p>We are going to create a new file called <code>Chart.razor</code>. Our component will receive all the data from the parent and pass it down to the Chart.js library via Javascript interop. It will have the following properties: Id, Type, Data, BackgroundColor and Labels. Usage example: <code>&lt;Chart Id=&quot;pie1&quot; Type=&quot;@Chart.ChartType.Pie&quot; Data=&quot;@(new[] { &quot;1&quot;, &quot;2&quot; })&quot; BackgroundColor=&quot;@(new[] { &quot;blue&quot;,&quot;green&quot;})&quot; Labels=&quot;@(new[] { &quot;Fail&quot;,&quot;Ok&quot;})&quot;&gt;&lt;/Chart&gt;</code>.<br>
+ Since we have to have the canvas html element rendered in the page before invoking the library we use <code>OnAfterRenderAsync</code> to do our logic and call the js library.
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#960050;background-color:#1e0010">@</span>*<span style="color:#75715e">//Chart.razor*@
+</span><span style="color:#75715e"></span>@inject IJSRuntime JSRuntime
+
+&lt;canvas id=<span style="color:#e6db74">&#34;@Id&#34;</span>&gt;&lt;/canvas&gt;
+
+@code {
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">enum</span> ChartType
+    {
+        Pie,
+        Bar
+    }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Parameter]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Parameter]</span>
+    <span style="color:#66d9ef">public</span> ChartType Type { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Parameter]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span>[] Data { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Parameter]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span>[] BackgroundColor { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+<span style="color:#a6e22e">
+</span><span style="color:#a6e22e">    [Parameter]</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span>[] Labels { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
+
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">override</span> <span style="color:#66d9ef">async</span> Task OnAfterRenderAsync(<span style="color:#66d9ef">bool</span> firstRender) 
+    {
+        <span style="color:#75715e">//Here we create an anonymous type with all the options that need to be sent to Chart.js
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">var</span> config = <span style="color:#66d9ef">new</span>
+        {
+            Type = Type.ToString().ToLower(),
+            Options = <span style="color:#66d9ef">new</span>
+            {
+                Responsive = <span style="color:#66d9ef">true</span>,
+                Scales = <span style="color:#66d9ef">new</span>
+                {
+                    YAxes = <span style="color:#66d9ef">new</span>[]
+                    {
+                        <span style="color:#66d9ef">new</span> { Ticks = <span style="color:#66d9ef">new</span> {
+                            BeginAtZero=<span style="color:#66d9ef">true</span>
+                        } }
+                    }
+                }
+            },
+            Data = <span style="color:#66d9ef">new</span>
+            {
+                Datasets = <span style="color:#66d9ef">new</span>[]
+                {
+                    <span style="color:#66d9ef">new</span> { Data = Data, BackgroundColor = BackgroundColor}
+                },
+                Labels = Labels
+            }
+        };
+
+        <span style="color:#66d9ef">await</span> JSRuntime.InvokeVoidAsync(<span style="color:#e6db74">&#34;setup&#34;</span>, Id, config);
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div></p>
+
+<h5 id="calling-setup">Calling setup()</h5>
+
+<p>We create a new javascript file called <code>chart.js</code> which initializes our Chart js component in a function called <code>setup()</code>. It receives the canvas Id and the config options from the blazor component.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//chart.js
+</span><span style="color:#75715e"></span>window.<span style="color:#a6e22e">setup</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">id</span>,<span style="color:#a6e22e">config</span>) =&gt; {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ctx</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">getElementById</span>(<span style="color:#a6e22e">id</span>).<span style="color:#a6e22e">getContext</span>(<span style="color:#e6db74">&#39;2d&#39;</span>);
+    <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Chart</span>(<span style="color:#a6e22e">ctx</span>, <span style="color:#a6e22e">config</span>);
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>and then we add chart.js to index.html</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html"><span style="color:#75715e">&lt;!--index.html--&gt;</span>
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+<span style="display:block;width:100%;background-color:#3c3d38">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;chart.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h2 id="using-the-new-component">Using the new component</h2>
+
+<p>Now we have our <code>&lt;Chart&gt;</code> component ready to be used. Simply add the tag to a new page/component E.g.
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">Chart</span> <span style="color:#a6e22e">Id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pie1&#34;</span> <span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@Chart.ChartType.Pie&#34;</span> <span style="color:#a6e22e">Data</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@(new[] { &#34;</span><span style="color:#a6e22e">1</span><span style="color:#960050;background-color:#1e0010">&#34;,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">2</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">})&#34;</span> <span style="color:#a6e22e">BackgroundColor</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@(new[] { &#34;</span><span style="color:#a6e22e">blue</span><span style="color:#960050;background-color:#1e0010">&#34;,&#34;</span><span style="color:#a6e22e">green</span><span style="color:#960050;background-color:#1e0010">&#34;})&#34;</span> <span style="color:#a6e22e">Labels</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@(new[] { &#34;</span><span style="color:#a6e22e">Fail</span><span style="color:#960050;background-color:#1e0010">&#34;,&#34;</span><span style="color:#a6e22e">Ok</span><span style="color:#960050;background-color:#1e0010">&#34;})&#34;</span>&gt;&lt;/<span style="color:#f92672">Chart</span>&gt;
+&lt;<span style="color:#f92672">Chart</span> <span style="color:#a6e22e">Id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bar1&#34;</span> <span style="color:#a6e22e">Type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@Chart.ChartType.Bar&#34;</span> <span style="color:#a6e22e">Data</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@(new[] { &#34;</span><span style="color:#a6e22e">10</span><span style="color:#960050;background-color:#1e0010">&#34;,</span> <span style="color:#960050;background-color:#1e0010">&#34;</span><span style="color:#a6e22e">9</span><span style="color:#960050;background-color:#1e0010">&#34;</span> <span style="color:#960050;background-color:#1e0010">})&#34;</span> <span style="color:#a6e22e">BackgroundColor</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@(new[] { &#34;</span><span style="color:#a6e22e">yellow</span><span style="color:#960050;background-color:#1e0010">&#34;,&#34;</span><span style="color:#a6e22e">red</span><span style="color:#960050;background-color:#1e0010">&#34;})&#34;</span> <span style="color:#a6e22e">Labels</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@(new[] { &#34;</span><span style="color:#a6e22e">Fail</span><span style="color:#960050;background-color:#1e0010">&#34;,&#34;</span><span style="color:#a6e22e">Ok</span><span style="color:#960050;background-color:#1e0010">&#34;})&#34;</span>&gt;&lt;/<span style="color:#f92672">Chart</span>&gt;</code></pre></td></tr></table>
+</div>
+</div></p>
+
+<p><img src="/imgs/2020/003-component.png# center border" alt="alt text" title="Page" />
+<div class="text-center"><em>Our component is not setting the dataset label option therefore <strong>undefined</strong> is rendered.</em></div></p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>This is a bare bone implementation that can be used as a blueprint if you want to extend it. Chart.js offers many different options to render the charts and they just need to be mapped in our anonymous class. E.g. If we want to create a property that holds the dataset label (and remove <strong>undefined</strong> from our rendered object) we would have something like this
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="display:block;width:100%;background-color:#3c3d38"><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cs" data-lang="cs"><span style="color:#66d9ef">var</span> config = <span style="color:#66d9ef">new</span>
+{
+    Type = Type.ToString().ToLower(),
+    Options = <span style="color:#66d9ef">new</span>
+    {
+        Responsive = <span style="color:#66d9ef">true</span>,
+        Scales = <span style="color:#66d9ef">new</span>
+        {
+            YAxes = <span style="color:#66d9ef">new</span>[]
+            {
+                <span style="color:#66d9ef">new</span> { Ticks = <span style="color:#66d9ef">new</span> {
+                    BeginAtZero=<span style="color:#66d9ef">true</span>
+                } }
+            }
+        }
+    },
+    Data = <span style="color:#66d9ef">new</span>
+    {
+        Datasets = <span style="color:#66d9ef">new</span>[]
+        {
+            <span style="color:#66d9ef">new</span> { Data = Data, 
+                    BackgroundColor = BackgroundColor, 
+<span style="display:block;width:100%;background-color:#3c3d38">                    Label=YourNewLabelProperty}
+</span>        },
+        Labels = Labels
+    }
+};
+</code></pre></td></tr></table>
+</div>
+</div></p>
+
+<p><em>Happy Coding!!</em> 😃💻<br>
+<em>William Leme</em></p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/blazor/'>blazor</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/2020/002-using-ionic-ui-in-blazor/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Using Ionic Ui Web components in a Blazor App</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/2020/004-b2b-innovations/'>
+        <span class='screen-reader-text'>Next post: </span>Driving B2B innovations with a B2C mindset.<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+<section id='comments' class='comments'>
+  <div class='container sep-before'>
+    <div class='comments-area'><div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wleme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  </div>
+</section>
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='mailto:contact@williamleme.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/williamleme' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2018-2020 William Leme </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

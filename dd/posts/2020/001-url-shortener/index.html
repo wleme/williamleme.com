@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang='en'><head><script src="/livereload.js?port=1313&mindelay=10&v=2" data-no-instant defer></script>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='A url shortener web app built in NodeJs &#43; EJS &#43; MongoDb &#43; Redis'>
+<meta name='theme-color' content='#70caea'>
+
+<meta property='og:title' content='App: A Url Shortener Web App • William Leme'>
+<meta property='og:description' content='A url shortener web app built in NodeJs &#43; EJS &#43; MongoDb &#43; Redis'>
+<meta property='og:url' content='http://localhost:1313/posts/2020/001-url-shortener/'>
+<meta property='og:site_name' content='William Leme'>
+<meta property='og:type' content='article'><meta property='article:section' content='posts'><meta property='article:tag' content='myapps'><meta property='article:tag' content='nodejs'><meta property='article:tag' content='mongodb'><meta property='article:published_time' content='2020-05-28T07:01:23-04:00'/><meta property='article:modified_time' content='2020-05-28T07:01:23-04:00'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@wleme'>
+
+<meta name="generator" content="Hugo 0.71.0" />
+
+  <title>App: A Url Shortener Web App • William Leme</title>
+  <link rel='canonical' href='http://localhost:1313/posts/2020/001-url-shortener/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'>
+<link rel='stylesheet' href='/assets/css/main.ab98e12b.css'><link rel='stylesheet' href='/css/custom.css?v=2'><style>
+:root{--color-accent:#70caea;}
+</style>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-50971964-4', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+  
+
+</head>
+<body class='page type-posts'>
+
+  <div class='site'><a class='screen-reader-text' href='#content'>Skip to Content</a><div class='main'><nav id='main-menu' class='menu main-menu' aria-label='Main Menu'>
+  <div class='container'>
+    
+    <ul><li class='item'>
+        <a href='/'></a>
+      </li><li class='item'>
+        <a href='/'>Home</a>
+      </li><li class='item'>
+        <a href='/posts/'>Blog</a>
+      </li><li class='item'>
+        <a href='/tags/myapps/'>My Toy Apps</a>
+      </li></ul>
+  </div>
+</nav><div class='header-widgets'>
+        <div class='container'></div>
+      </div>
+
+      <header id='header' class='header site-header'>
+        <div class='container sep-after'>
+          <div class='header-info'><p class='site-title title'>William Leme</p><p class='desc site-desc'>Software Engineer Manager | Azure Cloud Architect | .Net Ecosystem | Javascript | Sql</p>
+          </div>
+        </div>
+      </header>
+
+      <main id='content'>
+
+
+<article lang='en' class='entry'>
+  <header class='header entry-header'>
+  <div class='container sep-after'>
+    <div class='header-info'>
+      <h1 class='title'>App: A Url Shortener Web App</h1>
+      
+
+    </div>
+    <div class='entry-meta'>
+  <span class='posted-on'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+  <line x1="16" y1="2" x2="16" y2="6"/>
+  <line x1="8" y1="2" x2="8" y2="6"/>
+  <line x1="3" y1="10" x2="21" y2="10"/>
+  
+</svg>
+<span class='screen-reader-text'>Posted on </span>
+  <time class='entry-date' datetime='2020-05-28T07:01:23-04:00'>2020, May 28</time>
+</span>
+
+  
+  
+<span class='reading-time'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <circle cx="12" cy="12" r="10"/>
+  <polyline points="12 6 12 12 15 15"/>
+  
+</svg>
+4 mins read
+</span>
+
+
+</div>
+
+
+  </div>
+</header>
+
+  
+  
+
+  <div class='container entry-content'>
+  
+
+<p>Url: <a href="https://s.wllapps.com" target="_blank">https://s.wllapps.com</a></p>
+
+<p>I have put together a new app: A url shortener web app hosted at <a href="https://s.wllapps.com" target="_blank">https://s.wllapps.com</a> and built with nodejs / express + ejs + redis + mongodb. The idea is really simple, a full url is provided and a short version of it is returned e.g. <em>s.wllapps.com/code</em> where <em>code</em> is the unique identifier for that specific url.</p>
+
+<p>When a new url comes in, this app generates a new code and stores it in nodejs. When there&rsquo;s a request for a given <em>code</em> the web app pulls the mongo db document and redirects the user to its url.</p>
+
+<h4 id="mongodb-and-redis">MongoDb and Redis ?</h4>
+
+<p>I save the url along with its unique code in mongodb but also leverage redis in order to store the total number of urls that have been shortened. The idea is when you go to <a href="https://s.wllapps.com" target="_blank">https://s.wllapps.com</a> you are going to see the total number of urls right on the front page but I don&rsquo;t want to do a <em>db.collection.countDocument({})</em> on every request, which would have some performance issues as the application grows, therefore I keep this information in an in-memory redis instance.</p>
+
+<p>When the app connects to mongoDb I go ahead pull the total number of documents and store this information in a redis key. Check out the snippet below:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//mongodb js module:
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">mongoConnect</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">callback</span> =&gt; {
+    <span style="color:#a6e22e">MongoClient</span>.<span style="color:#a6e22e">connect</span>(<span style="color:#a6e22e">process</span>.<span style="color:#a6e22e">env</span>.<span style="color:#a6e22e">MONGODB</span>)
+    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">client</span> =&gt; {
+        <span style="color:#a6e22e">_db</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">client</span>.<span style="color:#a6e22e">db</span>();
+        <span style="color:#a6e22e">_db</span>.<span style="color:#a6e22e">collection</span>(<span style="color:#e6db74">&#39;codes&#39;</span>).<span style="color:#a6e22e">countDocuments</span>({},(<span style="color:#a6e22e">err</span>,<span style="color:#a6e22e">number</span>) =&gt; { <span style="color:#75715e">//pulling total number of docs
+</span><span style="color:#75715e"></span>            <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">getClient</span>().<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#34;total_codes&#34;</span>, <span style="color:#a6e22e">number</span>,() =&gt; { <span style="color:#75715e">//setting redis key
+</span><span style="color:#75715e"></span>                <span style="color:#a6e22e">callback</span>();
+            })
+        });
+    })
+    .<span style="color:#66d9ef">catch</span>(<span style="color:#a6e22e">err</span>=&gt; {
+        <span style="color:#a6e22e">log</span>.<span style="color:#a6e22e">error</span>(<span style="color:#a6e22e">err</span>);
+        <span style="color:#66d9ef">throw</span> <span style="color:#a6e22e">err</span>;
+    })
+};
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>When a user access the main route I first get the redis key value (line 4) and pass this information down to a ejs page (line 5). Note that <em>redis</em> is another js module</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//my router js module:
+</span><span style="color:#75715e">//....omitted
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">router</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;/&#39;</span>, (<span style="color:#a6e22e">req</span>,<span style="color:#a6e22e">res</span>,<span style="color:#a6e22e">next</span>)=&gt; {
+    <span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">getTotalCodes</span>((<span style="color:#a6e22e">total</span>)=&gt; {
+        <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">render</span>(<span style="color:#e6db74">&#39;index&#39;</span>,{<span style="color:#a6e22e">count</span><span style="color:#f92672">:</span><span style="color:#a6e22e">total</span>})
+    })
+})
+
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">router</span>;
+<span style="color:#75715e">//....omitted
+</span></code></pre></td></tr></table>
+</div>
+</div>
+
+<h6 id="what-about-new-data">What about new data ?</h6>
+
+<p>The first time the apps comes up I load the total number of docs on a redis cache and every time there&rsquo;s a new code I just update the cache by 1 besides adding a new document to the collection</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//...adding new mongodb doc is omitted
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">redis</span>.<span style="color:#a6e22e">getClient</span>().<span style="color:#a6e22e">incr</span>(<span style="color:#e6db74">&#34;total_codes&#34;</span>, () =&gt; {
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">redirect</span>(<span style="color:#e6db74">&#39;/created&#39;</span>);
+}) 
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<h4 id="generating-a-new-code">Generating a new code</h4>
+
+<p>I had to generate a unique code for every url which had to be short (otherwise it wouldn&rsquo;t be called url <strong>shortener</strong> 😃). The first thing that came to my mind was just to use a sequential number e.g. /1 /2 /3 and so on but although it was gonna be really short <em>&ndash;up to 4 digits&ndash;</em> I didn&rsquo;t want the discoverability to be that easy that people would just type a number and they could see the original page.</p>
+
+<p>I ended up leveraging mongo db document id which consists in <a href="https://docs.mongodb.com/manual/reference/method/ObjectId/" target="_blank">3 parts</a>:</p>
+
+<ul>
+<li>a 4 byte timestamp value</li>
+<li>a 5 byte random value</li>
+<li>a 3 byte incremental value, initialized to a random value</li>
+</ul>
+
+<p>I want to use the last 3 bytes which gives me what I want. First I add a new document, retrieve its id, pull the last 3 bytes out of it, create a new short code based on that and update the document.</p>
+
+<p>First, a module that parses mongo db id:</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">exports</span>.<span style="color:#a6e22e">parse</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">id</span>) =&gt; {
+    <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">ctr</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+    <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">toString</span>();
+
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_timestamp</span>   <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">ctr</span>, (<span style="color:#a6e22e">ctr</span><span style="color:#f92672">+=</span><span style="color:#ae81ff">8</span>)), <span style="color:#ae81ff">16</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_machineId</span>   <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">ctr</span>, (<span style="color:#a6e22e">ctr</span><span style="color:#f92672">+=</span><span style="color:#ae81ff">6</span>)), <span style="color:#ae81ff">16</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_processId</span>   <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">ctr</span>, (<span style="color:#a6e22e">ctr</span><span style="color:#f92672">+=</span><span style="color:#ae81ff">4</span>)), <span style="color:#ae81ff">16</span>);
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">_counter</span>     <span style="color:#f92672">=</span> parseInt(<span style="color:#a6e22e">id</span>.<span style="color:#a6e22e">slice</span>(<span style="color:#a6e22e">ctr</span>, (<span style="color:#a6e22e">ctr</span><span style="color:#f92672">+=</span><span style="color:#ae81ff">6</span>)), <span style="color:#ae81ff">16</span>);
+
+    <span style="color:#66d9ef">return</span> {
+        <span style="color:#a6e22e">timestamp</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> Date(<span style="color:#a6e22e">_timestamp</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>),
+        <span style="color:#a6e22e">counter</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">_counter</span>,
+        <span style="color:#a6e22e">machineId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">_machineId</span>,
+        <span style="color:#a6e22e">processId</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">_processId</span>
+    }
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>and my controller that adds a new document, gets its add, parses the id, creates the code and updates the document again:
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resultInsert</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">collection</span>(<span style="color:#e6db74">&#39;codes&#39;</span>)
+        .<span style="color:#a6e22e">insertOne</span>({
+            <span style="color:#a6e22e">url</span><span style="color:#f92672">:</span><span style="color:#a6e22e">url</span>
+        });
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">id</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">resultInsert</span>.<span style="color:#a6e22e">insertedId</span>.<span style="color:#a6e22e">toString</span>();
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parser</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">id</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">shortenerCode</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">generateCode</span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">counter</span>);
+
+ <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">resultUpdate</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">await</span> <span style="color:#a6e22e">db</span>.<span style="color:#a6e22e">collection</span>(<span style="color:#e6db74">&#39;codes&#39;</span>)
+        .<span style="color:#a6e22e">updateOne</span>(
+            {<span style="color:#a6e22e">_id</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">mongodb</span>.<span style="color:#a6e22e">ObjectID</span>(<span style="color:#a6e22e">id</span>)},
+            {<span style="color:#a6e22e">$set</span><span style="color:#f92672">:</span> {
+                <span style="color:#a6e22e">code</span><span style="color:#f92672">:</span><span style="color:#a6e22e">shortenerCode</span>
+            }} 
+        )
+</code></pre></td></tr></table>
+</div>
+</div></p>
+
+<h6 id="adding-some-characters-to-the-code">Adding some characters to the code</h6>
+
+<p>The sequential number from the mongo db doc id is, wait for it&hellip;, a number 😒 but I wanted to throw some characters in it in order to reduce the easiness of discovering a new code. I was able to accomplish that by converting the number to a base 32 encoding which uses a 32-character set comprising the twenty-six upper-case letters A–Z, and the digits 2–7. <a href="https://en.wikipedia.org/wiki/Base32" target="_blank">[more about base 32 encoding]</a> and also reverting the string so sequential strings are not so easy to find.</p>
+
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">generateCode</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">sequence</span>) =&gt; {
+    <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">s</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">sequence</span>.<span style="color:#a6e22e">toString</span>(<span style="color:#ae81ff">32</span>);
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">split</span>( <span style="color:#e6db74">&#39;&#39;</span> ).<span style="color:#a6e22e">reverse</span>( ).<span style="color:#a6e22e">join</span>( <span style="color:#e6db74">&#39;&#39;</span> );
+}
+</code></pre></td></tr></table>
+</div>
+</div>
+
+<p>and voila&hellip;a working url shortener. 👍</p>
+
+</div>
+
+  
+<footer class='entry-footer'>
+  <div class='container sep-before'><div class='categories'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M22,19a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V5A2,2,0,0,1,4,3H9l2,3h9a2,2,0,0,1,2,2Z"/>
+  
+</svg>
+<span class='screen-reader-text'>Categories: </span><a class='category' href='/categories/nodejs/'>nodejs</a></div>
+<div class='tags'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M20.59,13.41l-7.17,7.17a2,2,0,0,1-2.83,0L2,12V2H12l8.59,8.59A2,2,0,0,1,20.59,13.41Z"/>
+  <line x1="7" y1="7" x2="7" y2="7"/>
+  
+</svg>
+<span class='screen-reader-text'>Tags: </span><a class='tag' href='/tags/mongodb/'>mongodb</a>, <a class='tag' href='/tags/myapps/'>myapps</a>, <a class='tag' href='/tags/nodejs/'>nodejs</a></div>
+
+  </div>
+</footer>
+
+
+</article>
+
+<nav class='entry-nav'>
+  <div class='container'><div class='prev-entry sep-before'>
+      <a href='/posts/20200524-validating-environment-variables-in-nodejs/'>
+        <span aria-hidden='true'><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="20" y1="12" x2="4" y2="12"/>
+  <polyline points="10 18 4 12 10 6"/>
+  
+</svg>
+ Previous</span>
+        <span class='screen-reader-text'>Previous post: </span>Automatically checking whether environment variables exist in the host OS (Nodejs)</a>
+    </div><div class='next-entry sep-before'>
+      <a href='/posts/2020/002-using-ionic-ui-in-blazor/'>
+        <span class='screen-reader-text'>Next post: </span>Using Ionic Ui Web components in a Blazor App<span aria-hidden='true'>Next <svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <line x1="4" y1="12" x2="20" y2="12"/>
+  <polyline points="14 6 20 12 14 18"/>
+  
+</svg>
+</span>
+      </a>
+    </div></div>
+</nav>
+
+
+<section id='comments' class='comments'>
+  <div class='container sep-before'>
+    <div class='comments-area'><div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wleme" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+  </div>
+</section>
+
+      </main>
+
+      <footer id='footer' class='footer'>
+        <div class='container sep-before'><section class='widget widget-social_menu sep-after'><nav aria-label='Social Menu'>
+    <ul><li>
+        <a href='mailto:contact@williamleme.com' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Contact via Email</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+  <polyline points="22,6 12,13 2,6"/>
+  
+</svg>
+</a>
+      </li><li>
+        <a href='https://linkedin.com/in/williamleme' target='_blank' rel='noopener'>
+          <span class='screen-reader-text'>Open Linkedin account in new tab</span><svg class='icon' viewbox='0 0 24 24' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' aria-hidden='true'>
+  
+  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+  <rect x="2" y="9" width="4" height="12"/>
+  <circle cx="4" cy="4" r="2"/>
+  
+</svg>
+</a>
+      </li></ul>
+  </nav>
+</section><div class='copyright'>
+  <p> &copy; 2018-2020 William Leme </p>
+</div>
+
+        </div>
+      </footer>
+
+    </div>
+  </div><script>window.__assets_js_src="/assets/js/"</script>
+
+<script src='/assets/js/main.c3bcf2df.js'></script><script src='/js/custom.js'></script>
+
+</body>
+
+</html>
+

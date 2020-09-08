@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jsonpatch on William Leme</title>
+    <link>http://localhost:1313/tags/jsonpatch/</link>
+    <description>Recent content in jsonpatch on William Leme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 12 Dec 2018 08:04:16 -0500</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/jsonpatch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Put vs Patch Api in .Net Core</title>
+      <link>http://localhost:1313/posts/put-vs-patch-api-net-core/</link>
+      <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/put-vs-patch-api-net-core/</guid>
+      <description>There are 2 http verbs that can be used when updating a resource: Put and Patch but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>blazor on William Leme</title>
+    <link>http://localhost:1313/tags/blazor/</link>
+    <description>Recent content in blazor on William Leme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 12 Jun 2020 07:43:27 -0400</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/blazor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Chart.js &#43; Blazoar</title>
+      <link>http://localhost:1313/posts/2020/003-chartjs-blazor/</link>
+      <pubDate>Fri, 12 Jun 2020 07:43:27 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/2020/003-chartjs-blazor/</guid>
+      <description>Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component</description>
+    </item>
+    
+    <item>
+      <title>Using Ionic Ui Web components in a Blazor App</title>
+      <link>http://localhost:1313/posts/2020/002-using-ionic-ui-in-blazor/</link>
+      <pubDate>Mon, 08 Jun 2020 06:20:54 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/2020/002-using-ionic-ui-in-blazor/</guid>
+      <description>How to use Ionic Web Components in a Blazor Web Assembly App</description>
+    </item>
+    
+  </channel>
+</rss>

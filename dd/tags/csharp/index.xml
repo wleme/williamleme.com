@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>csharp on William Leme</title>
+    <link>http://localhost:1313/tags/csharp/</link>
+    <description>Recent content in csharp on William Leme</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 08 Apr 2020 09:20:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Securing your jwt in a js app (video tutorial - part 1)</title>
+      <link>http://localhost:1313/posts/20200408-securing-jwt-js-app-1/</link>
+      <pubDate>Wed, 08 Apr 2020 09:20:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/20200408-securing-jwt-js-app-1/</guid>
+      <description>Where should you store a json web token in a single page application ? Local storage ? a Cookie ?</description>
+    </item>
+    
+    <item>
+      <title>YNAB starter kit in .Net Core 2.2</title>
+      <link>http://localhost:1313/posts/0006-ynab-starter-kit-net-core-2.2/</link>
+      <pubDate>Wed, 30 Jan 2019 15:03:09 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/0006-ynab-starter-kit-net-core-2.2/</guid>
+      <description>&lt;p&gt;Want to start developing custom YNAB tools using .net core ? You can use this github project as a base&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Accessing OAuth access token in Asp.Net Core 2</title>
+      <link>http://localhost:1313/posts/0005-accessing-oauth-access-token-asp-core-2/</link>
+      <pubDate>Tue, 29 Jan 2019 15:39:04 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/0005-accessing-oauth-access-token-asp-core-2/</guid>
+      <description>&lt;p&gt;You can easily access the OAuth access token by calling&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Models and DTOs in Your API</title>
+      <link>http://localhost:1313/posts/models-and-dtos-in-your-api/</link>
+      <pubDate>Wed, 12 Dec 2018 15:08:34 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/models-and-dtos-in-your-api/</guid>
+      <description>&lt;p&gt;I religiously avoid using model objects on my API interfaces. The reason is really simple, a model is a business entity and you don&amp;rsquo;t want to expose a business entity inadvertently to your API consumers.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Put vs Patch Api in .Net Core</title>
+      <link>http://localhost:1313/posts/put-vs-patch-api-net-core/</link>
+      <pubDate>Wed, 12 Dec 2018 08:04:16 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/put-vs-patch-api-net-core/</guid>
+      <description>There are 2 http verbs that can be used when updating a resource: Put and Patch but when to use one over the another ? In simplistic terms the former updates the entire resource whereas the latter updates one partially.</description>
+    </item>
+    
+    <item>
+      <title>Enumerators in your Api - How to handle enums in your .Net Core Api</title>
+      <link>http://localhost:1313/posts/how-to-handle-enums-net-core/</link>
+      <pubDate>Thu, 06 Dec 2018 16:48:04 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/how-to-handle-enums-net-core/</guid>
+      <description>Return self-explanatory codes from you Api</description>
+    </item>
+    
+  </channel>
+</rss>

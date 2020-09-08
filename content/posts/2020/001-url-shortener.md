@@ -1,7 +1,7 @@
 ---
 title: "App: A Url Shortener Web App"
 date: 2020-05-28T07:01:23-04:00
-draft: true
+draft: false
 tags: ["myapps","nodejs","mongodb"]
 categories: ["nodejs"]
 summary: A url shortener web app built in NodeJs + EJS + MongoDb + Redis
@@ -14,7 +14,7 @@ I have put together a new app: A url shortener web app hosted at https://s.wllap
 When a new url comes in, this app generates a new code and stores it in nodejs. When there's a request for a given _code_ the web app pulls the mongo db document and redirects the user to its url.
 
 #### MongoDb and Redis ?
-I save the url along with its unique code in mongodb but also leverage redis in order to store the total number of urls that have been shortened. The idea is when you go to https://s.wllapps.com you are going to see the total number of urls right on the front page but I don't want to do a _db.collection.countDocument({})_ on every transaction, which would have some performance issues as the application grows, therefore I keep this information in an in-memory redis instance.
+I save the url along with its unique code in mongodb but also leverage redis in order to store the total number of urls that have been shortened. The idea is when you go to https://s.wllapps.com you are going to see the total number of urls right on the front page but I don't want to do a _db.collection.countDocument({})_ on every request, which would have some performance issues as the application grows, therefore I keep this information in an in-memory redis instance.
 
 When the app connects to mongoDb I go ahead pull the total number of documents and store this information in a redis key. Check out the snippet below:
 
