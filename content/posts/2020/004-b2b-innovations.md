@@ -1,7 +1,7 @@
 ---
 title: "Driving B2B innovations with a B2C mindset."
 date: 2020-08-31T13:48:58-04:00
-draft: false
+draft: true
 ---
 
 Any business is either selling their services / goods to other businesses (B2B) or to consumers (B2C). There's also a type of business that sells to other businesses which end-up selling to consumers (B2B2C)
