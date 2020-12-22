@@ -1,15 +1,14 @@
 ---
-title: "Chart.js + Blazoar"
+title: "Chart.js + Blazor"
 description: "Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component"
 cover: "/imgs/2020/003-cover.png#center"
 date: 2020-06-12T07:43:27-04:00
 draft: false
-summary: "Abstracting the usage of the Chart.Js Library in a Blazor WebAssembly Component"
 tags: ["blazor"]
 ---
 
 In this tutorial we will be creating a blazor component that receives the chart data and passes it to the [Chart js library](https://www.chartjs.org). This component will be limited to a Pie and Bar types but the idea is the same in case you want to implement other types.
-
+<!--more-->
 ## Adding Chart.js to the project
 
 Go to index html and add the Chart.js library from their cdn

@@ -1,7 +1,8 @@
 ---
-title: wllapps
+title: Sample Apps
 comments: false
 draft: false
+hidden: true
 ---
 
 Hello,
