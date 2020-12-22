@@ -4,7 +4,7 @@ title = "William Leme - Software Engineer"
 theme = "kiss"
 copyright = "Copyright &copy; William Leme"
 disqusShortname = ""
-googleAnalytics = ""
+googleAnalytics = "UA-50971964-4"
 Paginate = 10 # Number of posts per page
 enableRobotsTXT = true
 
