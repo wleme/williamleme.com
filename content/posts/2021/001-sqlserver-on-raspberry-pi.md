@@ -1,5 +1,5 @@
 ---
-title: "Runing Sql Server on a Raspberry Pi using Docker"
+title: "Running Sql Server on a Raspberry Pi using Docker"
 date: 2021-01-04T14:12:29-05:00
 draft: false
 tags: ["docker","devops"]
@@ -15,13 +15,13 @@ but then Microsoft introduced [**Azure Sql Edge**](https://docs.microsoft.com/en
 >
 >Azure SQL Edge is built on the latest versions of the SQL Server Database Engine, which provides industry-leading performance, security and query processing capabilities. Since Azure SQL Edge is built on the same engine as SQL Server and Azure SQL, it provides the same Transact-SQL (T-SQL) programming surface area that makes development of applications or solutions easier and faster, and makes application portability between IoT Edge devices, data centers and the cloud straight forward.
 
-and most important it's compatible with ARM architechtures
+and most important it's compatible with ARM architectures
 
 #### Installing it on a raspberry pi using docker
 
 ##### Assumptions
 
-You have a raspbery pi running ubuntu with docker properly setup
+You have a raspberry pi running ubuntu with docker properly setup
 
 ##### Pulling docker image and running it
 
@@ -47,8 +47,8 @@ services:
       - 1433:1433
 {{< /highlight >}}
 
-The most important thing to know is that Azure SQL Edge containers run with a non-root user meaning you need to give permission to the volumes specified above. Just chown the volume folders to whatever uid the container is using by default **or** use *user: root* as specified at line #7. This aproach is the simplest one if you are using sql server as your dev db server.
+The most important thing to know is that Azure SQL Edge containers run with a non-root user meaning you need to give permission to the volumes specified above. Just chown the volume folders to whatever uid the container is using by default **or** use *user: root* as specified at line #7. This approach is the simplest one if you are using sql server as your dev db server.
 
 #### Connecting from outside the container / raspberry pi
 
-Since we are exposing port number 1433 outside the boundaires of the container, it's available to be accessed by any tool. Eg. HeidiSql
+Since we are exposing port number 1433 outside the boundaries of the container, it's available to be accessed by any tool. Eg. HeidiSql
