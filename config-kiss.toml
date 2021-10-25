@@ -1,0 +1,74 @@
+baseurl = "https://williamleme.com"
+languageCode = "en"
+title = "William Leme - Software Engineer"
+theme = "kiss"
+copyright = "Copyright &copy; William Leme"
+disqusShortname = ""
+googleAnalytics = "UA-50971964-4"
+Paginate = 10 # Number of posts per page
+enableRobotsTXT = true
+
+[params.rss] # Adding this tag enables RSS feed
+includeContent = true # Includes whole content in rss
+authorName = "William Leme" # Author full name
+authorEmail = "contact@williamleme.com" # Author email
+
+[params.assets]
+customCSS = ["css/custom.css"]
+
+[params.info]
+adsense = "" # Adsense ID (ID only, without ca-pub-)
+enableSocial = true # Adds OpenGraph and Twitter cards
+homeTitle = "William Leme" # Title for home page
+poweredby = false # Adds powered by hugo and kiss below Copyright
+related = false # Includes related articles at the bottom of the article
+codeCopy = false # Add copy button above code blocks
+taxonomiesCount = true # Add taxonomies count
+
+[params.features]
+disqusOnDemand = true  # Load Disqus comments on click
+
+
+[params.opengraph.facebook]
+admins = [] # array of Facebook IDs
+appID = ""
+pageID = ""
+
+[params.opengraph.twitter]
+page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+
+[params.social]
+twitter = ""
+github = ""
+email = ""
+linkedin = ""
+facebook = ""
+instagram = ""
+codepen = ""
+rss = "index.xml" # Add this to show RSS button in social.
+
+[params.social.config]
+platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
+
+#[params.matomoAnalytics]
+#siteID = 1
+#rootURL = "//matomo.example.com/"
+
+#[params.fathomAnalytics]
+#rootURL = "//fathom.example.com/"
+
+[taxonomies]
+tag ="tags"
+
+[blackfriday]
+hrefTargetBlank = true
+
+[markup]
+  defaultMarkdownHandler = "blackfriday"
+  [markup.blackfriday]
+    hrefTargetBlank = true
+
+[params.sections_left]
+"/"= "Home"
+"/about" = "About Me"
+"/wllapps" = "Sample Apps"

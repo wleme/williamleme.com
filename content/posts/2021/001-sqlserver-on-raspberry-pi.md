@@ -2,7 +2,7 @@
 title: "Running Sql Server on a Raspberry Pi using Docker"
 date: 2021-01-04T14:12:29-05:00
 draft: false
-tags: ["docker","devops"]
+tags: ["docker","devops","iot"]
 ---
 
 Sql Server for linux has been around for a bit but it's only designed for x86 architectures which means not compatible with ARM therefore not possible to use it on a raspberry pi. 

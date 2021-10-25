@@ -6,7 +6,7 @@ tags: ["csharp",".net"]
 ---
 
 C# 9.0 introduces a new type called *record type* which is an immutable reference type with a 'built-in' value-based comparison. It's inumattble because once the object is created it cannot be changed.
-<!--more-->
+
 The example below creates 2 structures. A Record and a regular Class 
 {{< highlight cs "linenos=table" >}}
 public record CarRecord

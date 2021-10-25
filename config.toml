@@ -1,74 +1,75 @@
-baseurl = "https://williamleme.com"
-languageCode = "en"
-title = "William Leme - Software Engineer"
-theme = "kiss"
-copyright = "Copyright &copy; William Leme"
-disqusShortname = ""
+baseURL = "https://www.williamleme.com"
+languageCode = "en-us"
+title = "William Leme"
+theme = "ezhil-master"
+paginate = 10
+
+copyright = "© William Leme"
+
+pygmentsstyle = "solarized-dark"
+pygmentscodefences = true
+pygmentscodefencesguesssyntax = false
+
 googleAnalytics = "UA-50971964-4"
-Paginate = 10 # Number of posts per page
-enableRobotsTXT = true
+disqusShortname = ""
 
-[params.rss] # Adding this tag enables RSS feed
-includeContent = true # Includes whole content in rss
-authorName = "William Leme" # Author full name
-authorEmail = "contact@williamleme.com" # Author email
+summaryLength = 20
 
-[params.assets]
-customCSS = ["css/custom.css"]
+[params]
+	subtitle = "Software Engineer"
+	disableDisqusTypes = ["page"]
+	featherIconsCDN = true
+	mode = "light" # "dark", "auto", "light"
+	customCSS = "css/custom-vs1.css"  # Custom CSS applied to default styles.
+	# customDarkCSS = "css/custom-dark.css"  # Custom styles applied to dark mode css.
+	# customJS = ["https://code.jquery.com/jquery-3.4.1.js", "js/custom1.js"]  # Custom JS scripts.
+	customJS = ["js/custom-vs1.js"]  # Custom JS scripts.
 
-[params.info]
-adsense = "" # Adsense ID (ID only, without ca-pub-)
-enableSocial = true # Adds OpenGraph and Twitter cards
-homeTitle = "William Leme" # Title for home page
-poweredby = false # Adds powered by hugo and kiss below Copyright
-related = false # Includes related articles at the bottom of the article
-codeCopy = false # Add copy button above code blocks
-taxonomiesCount = true # Add taxonomies count
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
 
-[params.features]
-disqusOnDemand = true  # Load Disqus comments on click
+#[[menu.main]]
+#name = "All posts"
+#url = "/posts"
+#weight = 2
 
+#[[menu.main]]
+#name = "Tags"
+#url = "/tags"
+#weight = 500
 
-[params.opengraph.facebook]
-admins = [] # array of Facebook IDs
-appID = ""
-pageID = ""
+[[menu.main]]
+name = "Sample Apps"
+weight = 400
+identifier = "apps"
+url = "/wllapps/"
 
-[params.opengraph.twitter]
-page = "" # Twitter Page username. If not set, params.social.twitter will be used.
+[[params.social]]
+name = "Github"
+icon = "github"
+url = "https://github.com/wleme"
 
-[params.social]
-twitter = ""
-github = ""
-email = ""
-linkedin = ""
-facebook = ""
-instagram = ""
-codepen = ""
-rss = "index.xml" # Add this to show RSS button in social.
+[[params.social]]
+name = "Linkedin"
+icon = "linkedin"
+url = "https://www.linkedin.com/in/williamleme/"
 
-[params.social.config]
-platforms = ["github","facebook","twitter","instagram","email","codepen","linkedin"]
+[[params.social]]
+name = "Twitter"
+icon = "twitter"
+url = "https://www.twitter.com/wleme/"
 
-#[params.matomoAnalytics]
-#siteID = 1
-#rootURL = "//matomo.example.com/"
-
-#[params.fathomAnalytics]
-#rootURL = "//fathom.example.com/"
+#[[params.social]]
+#name = "RSS"
+#icon = "rss"
+#url = "/index.xml"
 
 [taxonomies]
-tag ="tags"
-
-[blackfriday]
-hrefTargetBlank = true
+   tag = "tags"
 
 [markup]
   defaultMarkdownHandler = "blackfriday"
   [markup.blackfriday]
     hrefTargetBlank = true
-
-[params.sections_left]
-"/"= "Home"
-"/about" = "About Me"
-"/wllapps" = "Sample Apps"

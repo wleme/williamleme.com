@@ -21,9 +21,9 @@ enableEmoji = true
 # Missing translations will default to this content language
 defaultContentLanguage = "en"
 
-[about]
-title = "a"                            # default: .Site.Title
-description = "a"
+#[about]
+#title = "a"                            # default: .Site.Title
+#description = "a"
 
 [params.info]
 description = "Software Engineer Manager | Azure Cloud Architect | .Net Ecosystem | Javascript | Sql | NoSql"
