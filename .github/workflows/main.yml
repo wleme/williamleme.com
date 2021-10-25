@@ -1,3 +1,4 @@
+#https://sebastiandedeyne.com/how-to-schedule-posts-with-hugo-netlify-and-github-actions/
 name: Cron build
 
 on:
