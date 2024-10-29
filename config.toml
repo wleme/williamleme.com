@@ -70,6 +70,6 @@ url = "https://www.twitter.com/wleme/"
    tag = "tags"
 
 [markup]
-  defaultMarkdownHandler = "blackfriday"
+  defaultMarkdownHandler = "goldmark"
   [markup.blackfriday]
     hrefTargetBlank = true
