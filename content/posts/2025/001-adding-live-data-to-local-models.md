@@ -1,20 +1,19 @@
 ---
-title: "Adding live data to Local SLM"
+title: "Adding live data to Local SLMs"
 #description: "How to access OAuth access tokens"
 date: 2025-03-29
 draft: true
-tags: ["AI", ".Net","RaspberryPI"]
+tags: ["AI", ".Net"]
 summary: "Adding live data to a local SLM running off a docker container in raspberry pi and preserving the context. We will build a .net console app that connects to the `Ollama` instance using the `Microsoft.Extensions.Ai` nuget package"
 ---
 
 ## What are we doing ?
-We'll set up the `Ollama` Docker container on a Raspberry Pi and download a Small Language Model (SLM). Then, we'll build a .NET application that connects to the Raspberry Pi to chat with the user and fetch live weather data using `Microsoft.Extensions.Ai`. We'll also implement session persistence, so the app remembers past conversations the next time it's launched.
+We'll set up the `Ollama` Docker container and download a Small Language Model (SLM). Then, we'll build a .NET application that connects to the Ollama instance to chat with the user and fetch live weather data using `Microsoft.Extensions.Ai`. We'll also implement session persistence, so the app remembers past conversations the next time it's launched.
 
 ## Pulling Ollama docker image in docker compose + downloading SLM
-`a`
 
-docker-compose.yml 
-```
+```yml
+#docker-compose.yml
 version: '3'
 services:
   ollama:
@@ -54,6 +53,11 @@ Any time there's a question about the current weather in a given location we wil
 
 ### Persisting the data
 All the conversation is persisted in a local sqllite db. Whenever the app comes up again, we load the past conversations from it.
+
+Note - As the context grows, it slows down the queries to the SLM tremendously in CPUs. 
+
+Running a 3b Model in a CPU 😜
+![alt text](/imgs/2025/001-cpu.png)
 
 ## References
 https://hub.docker.com/r/ollama/ollama </br>
