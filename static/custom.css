@@ -1,0 +1,10 @@
+header.profile {
+    margin: 60px auto 60px auto !important;
+}
+img.avatar {
+    display: none !important;
+}
+
+#list-page {
+    max-width: 780px!important;
+}

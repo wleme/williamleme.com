@@ -1,9 +1,10 @@
 ---
 title: About Me
-draft: false
+draft: true
 comments: false
 menu: main
 weight: 50
+
 hidden: true 
 ---
 

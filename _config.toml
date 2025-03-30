@@ -1,7 +1,7 @@
 baseURL = "https://www.williamleme.com/"
 languageCode = "en-us"
 title = "William Leme"
-theme = "ezhil-master"
+theme = "hugo-theme-mini-master"
 paginate = 10
 
 copyright = "© William Leme"
