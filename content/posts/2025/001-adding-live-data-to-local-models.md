@@ -1,8 +1,7 @@
 ---
 title: "Adding live data to local language models"
-#description: "How to access OAuth access tokens"
 date: 2025-03-29
-draft: true
+draft: false
 tags: ["AI", ".Net"]
 summary: "Adding live data to a local SLM running off a docker container in raspberry pi and preserving the context. We will build a .net console app that connects to the `Ollama` instance using the `Microsoft.Extensions.Ai` nuget package"
 ---
@@ -128,6 +127,9 @@ Note - As the context grows, it slows down the queries to the SLM tremendously i
 
 Running a 3b Model in a CPU 😜
 ![alt text](/imgs/2025/001-cpu.png)
+
+## Source code
+https://github.com/wleme/OllamaSample
 
 ## References
 https://hub.docker.com/r/ollama/ollama </br>
